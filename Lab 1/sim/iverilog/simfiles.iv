@@ -1,0 +1,5 @@
+../../src/verilog/rtl/toupper.v
+../../src/verilog/rtl/uart.v
+../../src/verilog/rtl/lab1.v
+../../src/verilog/testbench/lab1_tb.v
+../../src/verilog/testbench/sim_uart.v

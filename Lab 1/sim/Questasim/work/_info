@@ -1,0 +1,124 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/usr/jca/Projectos/FCT_GROW_2018/Projetos/GLIDERRECOV/hw/sim
+T_opt
+!s110 1646738572
+Vka1GSgiH6hf:e2]SO=PTC1
+04 7 4 work lab1_tb fast 0
+=1-b05cdae825a3-62273c8b-3a4-5104
+o-quiet -auto_acc_if_foreign -work work +acc
+Z0 tCvgOpt 0
+n@_opt
+OL;O;10.6a;65
+vlab1
+Z1 !s110 1646738432
+!i10b 1
+!s100 W2>9?@gn<0536cfVcflRD2
+IShPPiGaWHN8F_]Y:IUKQ`2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/sim
+w1537797847
+8C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/lab1.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/lab1.v
+L0 13
+Z4 OL;L;10.6a;65
+r1
+!s85 0
+31
+!s108 1646738431.000000
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/lab1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/lab1.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vlab1_tb
+R1
+!i10b 1
+!s100 ]Qa<F8LD^AC:^iA]nNm^n1
+IanWA1[1<h0k]3P><Ed?Eg0
+R2
+R3
+w1537797856
+8C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/lab1_tb.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/lab1_tb.v
+L0 17
+R4
+r1
+!s85 0
+31
+Z6 !s108 1646738432.000000
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/lab1_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/lab1_tb.v|
+!i113 0
+R5
+R0
+vsim_uart
+R1
+!i10b 1
+!s100 RIVz1AW_0P;;F9UU1JVd?0
+IJA::o8?b7Pk1@4h:h=D3K2
+R2
+R3
+w1475078537
+8C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/sim_uart.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/sim_uart.v
+Z7 L0 15
+R4
+r1
+!s85 0
+31
+R6
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/sim_uart.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/sim_uart.v|
+!i113 0
+R5
+R0
+vtoupper
+R1
+!i10b 1
+!s100 Y>=@ZHO=Rai9[f0;X6^201
+IZL[L?>`dlf<m@nP?InZWg0
+R2
+R3
+w1411939646
+8C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/toupper.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/toupper.v
+L0 1
+R4
+r1
+!s85 0
+31
+R6
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/toupper.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/toupper.v|
+!i113 0
+R5
+R0
+vuart
+R1
+!i10b 1
+!s100 bl`VB=H51]i9_;FV@Sn`A1
+Ii9I9k?WIV?5hU`=@nhlcA3
+R2
+R3
+w1537797873
+8C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/uart.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/uart.v
+R7
+R4
+r1
+!s85 0
+31
+R6
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/uart.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/uart.v|
+!i113 0
+R5
+R0
