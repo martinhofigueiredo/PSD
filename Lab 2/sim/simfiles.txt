@@ -1,8 +1,6 @@
 src/verilog-IPs/ATAN_ROM.v
 src/verilog-IPs/ITERCOUNTER.v
 src/verilog-IPs/MODSCALE.v
-src/verilog-rtl/adder.v
-src/verilog-rtl/mux2.v
+src/verilog-rtl/addsub.v
 src/verilog-rtl/rec2pol.v
-src/verilog-rtl/subber.v
 src/verilog-tb/rec2pol_tb.v

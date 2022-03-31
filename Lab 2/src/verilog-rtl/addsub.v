@@ -1,6 +1,6 @@
-module addssub(
-				input signed [32:0] a,
-				input signed [32:0] b,
+module addsub(
+				input signed [31:0] a,
+				input signed [31:0] b,
                 input sel,
 				output [31:0] out
 			);
