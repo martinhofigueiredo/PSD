@@ -14,3 +14,4 @@ compile:
 
 simulate:
 	vvp sim/iverilog/lab1.out
+	mv mysimdata.vcd  sim/iverilog
