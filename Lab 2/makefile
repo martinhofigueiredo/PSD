@@ -13,4 +13,4 @@ compile:
 	iverilog -c sim/simfiles.txt -o sim/lab1.out
 
 simulate:
-	vpp sim/iverilog/lab1.out
+	vvp sim/iverilog/lab1.out
