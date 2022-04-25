@@ -24,7 +24,7 @@ module psdsqrt(
        ) 
  ```
 
-![img1](img/module.png)
+![img1](doc/img/module.png)
 
 __Figure 1__ – RTL diagram of the sequential square root calculator.
 
@@ -89,7 +89,7 @@ To obtain the fractional part of the result do the following:
 
 Build a sequential controller to generate the signals start and stop, according to the number of bit of the input operand specified by the parameter `NBITSIN`. The sequential controller must receive a single clock pulse in input run to start on calculation and generate the 3 output signals start, stop and busy, implementing the timing diagram shown in figure 2 (this is for a 16-bit output result)
 
-![img2](img/controller.png)
+![img2](doc/img/controller.png)
 
 __Figure 2__ - Timing Diagram for Sequencial Controller
 
