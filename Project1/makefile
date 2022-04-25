@@ -7,9 +7,9 @@ clean:
 	rm sim/mysimdata.vcd
 
 list:
-	ls src -R > sim/simfiles.txt
+	find src -type f -name "*.v" > sim/simfiles.txt
 
-compile: 
+compile: sim/simfiles.txt
 	iverilog -c sim/simfiles.txt -o sim/lab1.out
 
 simulate:

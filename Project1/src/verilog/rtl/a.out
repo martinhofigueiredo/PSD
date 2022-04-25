@@ -1,0 +1,34 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "-l";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x565218ac10d0 .scope module, "psdsqrt" "psdsqrt" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clock"
+    .port_info 1 /INPUT 1 "reset"
+    .port_info 2 /INPUT 1 "start"
+    .port_info 3 /INPUT 1 "stop"
+    .port_info 4 /INPUT 32 "xin"
+    .port_info 5 /OUTPUT 16 "sqrt"
+P_0x565218ac1250 .param/l "NUMBITS" 0 2 11, +C4<00000000000000000000000000100000>;
+o0x7f425882b018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565218ac1390_0 .net "clock", 0 0, o0x7f425882b018;  0 drivers
+o0x7f425882b048 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565218b03f60_0 .net "reset", 0 0, o0x7f425882b048;  0 drivers
+v0x565218b04020_0 .var "sqrt", 15 0;
+o0x7f425882b0a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565218b04110_0 .net "start", 0 0, o0x7f425882b0a8;  0 drivers
+o0x7f425882b0d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x565218b041d0_0 .net "stop", 0 0, o0x7f425882b0d8;  0 drivers
+o0x7f425882b108 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x565218b042e0_0 .net "xin", 31 0, o0x7f425882b108;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "psdsqrt.v";
