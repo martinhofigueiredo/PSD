@@ -1,4 +1,14 @@
-module psdsqrt( 
+module multiplier #(parameter NUM_BITS=32) (input A[NUMBITS1:0], input B[NUMBITS1:0], output O[(NUMBITS/2)-1:0]);
+  assign O = A * B;
+endmodule
+
+module comparator (input A, input B, output O);
+
+  assign O = A >= B;
+
+endmodule
+
+module psdsqrt #(parameter NUM_BITS=32) ( 
      input clock,      // master clock rising edge 
      input reset,      // synch reset active high 
      input start,      // start a new square root, one clock pulse 
@@ -8,24 +18,10 @@ module psdsqrt(
        );
 
 
-  parameter NUMBITS = 32;
 
-  module MUL1 multiplier(sqrt,sqrt, sqtestsqrt);
+  multiplier MUL1 (sqrt[(NUMBITS/2)-1:0],sqrt[(NUMBITS/2)-1:0], sqtestsqrt[NUMBITS-1:0]);
 
-  wire 
-  module CO1 comparator(sqtestsqrt, l);
+  comparator CO1 (sqtestsqrt[NUMBITS-1:0], xin[NUMBITS-1:0], flag);
 
-
-endmodule
-
-module multiplier(input A, input B, output O);
-
-  assign O = A * B;
-
-endmodule
-
-module comparator(input A, input B, output O);
-
-  assign O = A >= B;
 
 endmodule

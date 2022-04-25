@@ -11,7 +11,8 @@ Lab 1 - Design and verification of a sequential square root calculator
 	jca@fe.up.pt, April 2022
 	
 */
-`timescale 1ns / 100ps; //1ns/ 1ns
+
+`timescale 1ns / 1ns //1ns/ 1ns
 
 module psdsqrt_tb;
  
