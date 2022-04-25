@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Install Iverilog
+      run: sudo apt-get install iverilog
+      
     - name: Make Module
       run: cd Project1 && make module
       
