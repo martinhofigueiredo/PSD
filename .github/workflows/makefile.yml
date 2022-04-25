@@ -1,0 +1,25 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Make Module
+      run: cd Project1 && make module
+      
+    - name: Make Testbench
+      run: cd Project1 && make testbench
+      
+    - name: Make Compile check
+      run: cd Project1 && make compile
+     
