@@ -99,9 +99,9 @@ __Figure 2__ - Timing Diagram for Sequencial Controller
 ----
 ----
 # To do List
-1. Implement Module
-2. Change Test bench
-3. Test!
+1. Implement Module [ ]
+2. Change Test bench [ ]
+3. Test! [ ]
 
 ## Notes
 - The parameterization isnt going as planned.
