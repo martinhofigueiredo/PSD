@@ -17,6 +17,9 @@ jobs:
     - name: Install Iverilog
       run: sudo apt-get install iverilog
       
+    - name: Make List
+      run: cd Project1 && make list
+      
     - name: Make Module
       run: cd Project1 && make module
       
