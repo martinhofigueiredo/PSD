@@ -13,7 +13,7 @@ module  sim/module.out:
 	iverilog -m -l src/verilog/rtl/psdsqrt.v -o sim/module.out
 
 testbench sim/testbench.out:
-	iverilog -m -l src/verilog/testbench/psdsqrt_tb.v -o sim/testbench.out
+	iverilog -m -l src/verilog/testbench/sec_controller_tb.v -o sim/testbench.out
 
 compile: sim/simfiles.txt
 	iverilog -c sim/simfiles.txt -o sim/iverilog/project1.out
