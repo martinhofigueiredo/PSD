@@ -20,4 +20,4 @@ compile: sim/simfiles.txt
 
 simulate: 
 	vvp sim/iverilog/project1.out
-	mv mysimdata.vcd  sim/iverilog/simulationdata.vcd
+	mv sec_controller_tb.vcd  sim/iverilog/simulationdata.vcd
