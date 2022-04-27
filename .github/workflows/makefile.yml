@@ -23,9 +23,8 @@ jobs:
     - name: Make Module
       run: cd Project1 && make module
       
-    - name: Make Testbench
-      run: cd Project1 && make testbench
-      
     - name: Make Compile check
       run: cd Project1 && make compile
      
+    - name: Simulate 
+      run: cd Project1 && make simulate
