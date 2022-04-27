@@ -1,6 +1,6 @@
 default:
 	make compile
-	make simultate
+	make simulate
 
 clean:
 	rm sim/lab1.out
@@ -9,15 +9,15 @@ clean:
 list:
 	find src -type f -name "*.v" > sim/simfiles.txt
 
-module:
-	iverilog -m -l src/verilog/rtl/psdsqrt.v
+module  sim/module.out:
+	iverilog -m -l src/verilog/rtl/psdsqrt.v -o sim/module.out
 
-testbench:
-	iverilog -m -l src/verilog/testbench/psdsqrt_tb.v
+testbench sim/testbench.out:
+	iverilog -m -l src/verilog/testbench/psdsqrt_tb.v -o sim/testbench.out
 
 compile: sim/simfiles.txt
-	iverilog -c sim/simfiles.txt -o sim/lab1.out
+	iverilog -c sim/simfiles.txt -o sim/iverilog/project1.out
 
-simulate:
-	vvp sim/iverilog/lab1.out
-	mv mysimdata.vcd  sim/iverilog
+simulate: 
+	vvp sim/iverilog/project1.out
+	mv mysimdata.vcd  sim/iverilog/simulationdata.vcd
