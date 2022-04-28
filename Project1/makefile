@@ -3,9 +3,7 @@ default:  list
 	make simulate
 
 clean:
-	rm sim/iverilog/project1.out
-	rm sim/vpp/mysimdata.vcd
-
+	rm sim/iverilog/project1.out sim/vpp/simulationdata.vcd
 list:
 	find src -type f -name "*.v" > sim/simfiles.txt
 
@@ -23,8 +21,8 @@ simulate:
 	make movefile
 
 movefile:
-	mv project1.vcd  sim/iverilog/simulationdata.vcd
+	mv project1.vcd  sim/vpp/simulationdata.vcd
 
 print:
-	head sim/iverilog/simulationdata.vcd > sim/iverilog/small.vcd
-	vcdcat -d sim/iverilog/small.vcd
+	head sim/vpp/simulationdata.vcd > sim/vpp/small.vcd
+	vcdcat -d sim/vpp/small.vcd
