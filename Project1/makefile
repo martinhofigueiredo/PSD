@@ -23,7 +23,7 @@ simulate:
 	make movefile
 
 movefile:
-	mv sec_controller_tb.vcd  sim/iverilog/simulationdata.vcd
+	mv project1.vcd  sim/iverilog/simulationdata.vcd
 
 print:
 	head sim/iverilog/simulationdata.vcd > sim/iverilog/small.vcd
