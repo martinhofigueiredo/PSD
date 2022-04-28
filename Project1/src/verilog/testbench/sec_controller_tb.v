@@ -53,7 +53,7 @@ psdsqrt #(.NBITSIN(NBITS)) psdsqrt_2
 // Setup initial signals
 initial
 begin
-$dumpfile("sec_controller_tb.vcd"); 
+$dumpfile("project1.vcd"); 
 $dumpvars(0, sec_controller_tb);
   x=0;
   run=0;
@@ -88,6 +88,7 @@ initial
 begin
   # ( MAX_SIM_TIME )
   $stop;
+  $finish;
 end
 
 //---------------------------------------------------
