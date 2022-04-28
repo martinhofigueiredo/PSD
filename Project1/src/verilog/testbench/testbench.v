@@ -87,7 +87,6 @@ end
 initial
 begin
   # ( MAX_SIM_TIME )
-  $stop;
   $finish;
 end
 
@@ -97,7 +96,6 @@ initial
 begin
   // Wait 10 clock periods
   # ( 10*CLOCK_PERIOD );
-
   //startstates(1);
   startstates(100);
   $display("%d", sqrt);
@@ -109,7 +107,6 @@ begin
   $display("%d", sqrt);
   startstates(4300);
   $display("%d", sqrt);
-  
   #( 10*CLOCK_PERIOD );
   $finish;  //acaba a simulação
 end
