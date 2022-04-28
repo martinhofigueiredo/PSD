@@ -14,23 +14,23 @@ Lab 1 - Design and verification of a sequential square root calculator
 
 `timescale 1ns / 100ps
 
-module sec_controller_tb;
+module testbench;
  
 // general parameters 
 parameter CLOCK_PERIOD = 10;              // Clock period in ns
 parameter MAX_SIM_TIME = 100_000_000;     // Set the maximum simulation time (time units=ns)
-parameter NBITS=16;// par
+parameter NUM_BITS=32;// par
 // Registers for driving the inputs:
 
 reg  clock, reset, run; 
 wire start, stop, busy;
 
-reg  [NBITS-1:0] x;
-wire [NBITS/2-1:0] sqrt;
+reg  [NUM_BITS-1:0] x;
+wire [NUM_BITS/2-1:0] sqrt;
 // Instantiate the module under verification:
 
 
-sec_controller  #(.NBITSIN(NBITS)) sec_1    
+controller #(.NBITSIN(NUM_BITS)) cnt_1    
 		( 		.run(run),
 				.clock(clock), // master clock rising edge 
 				.reset(reset),
@@ -38,7 +38,7 @@ sec_controller  #(.NBITSIN(NBITS)) sec_1
 				.start(start),
 				.stop(stop)
 						);
-psdsqrt #(.NBITSIN(NBITS)) psdsqrt_2
+psdsqrt #(.NBITSIN(NUM_BITS)) psdsqrt_2
       ( 	
 	    .clock(clock), // master clock, active in the positive edge
         .reset(reset), // master reset, synchronous and active high
@@ -53,13 +53,13 @@ psdsqrt #(.NBITSIN(NBITS)) psdsqrt_2
 // Setup initial signals
 initial
 begin
-$dumpfile("sec_controller_tb.vcd"); 
-$dumpvars(0, sec_controller_tb);
+$dumpfile("project1.vcd"); 
+$dumpvars(0, cnt_1);
   x=0;
   run=0;
   clock = 0;
   reset = 0;
- // defparam psdsqrt_1.NBITSIN= NBITS;
+ // defparam psdsqrt_1.NBITSIN= NUM_BITS;
 end
 
 //---------------------------------------------------
@@ -88,6 +88,7 @@ initial
 begin
   # ( MAX_SIM_TIME )
   $stop;
+  $finish;
 end
 
 //---------------------------------------------------
@@ -95,7 +96,7 @@ end
 initial
 begin
   // Wait 10 clock periods
-  #( 10*CLOCK_PERIOD );
+  # ( 10*CLOCK_PERIOD );
 
   //startstates(1);
   startstates(100);
@@ -116,7 +117,7 @@ end
 //---------------------------------------------------
 // Simulate the sequential controller to perform a square root.
 task startstates;
-input [NBITS-1:0] xin;
+input [NUM_BITS-1:0] xin;
  begin
    x = xin;   // Apply operands
   

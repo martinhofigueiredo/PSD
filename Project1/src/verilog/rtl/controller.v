@@ -1,5 +1,5 @@
-module sec_controller
-		#(parameter NBITSIN = 16)
+module controller
+		#(parameter NBITSIN = 32)
 				( input run,
 				 input clock, // master clock rising edge 
 				 input reset,
@@ -57,7 +57,6 @@ always @(posedge clock )
 			   stop <= 1'b0;
 			   busy <= 1'b0;
 			   state <= 2'b00;	
-			   //$display("%d", conta);			   
 			   conta<=0;
 			end
 	 default: state<= 2'b00;

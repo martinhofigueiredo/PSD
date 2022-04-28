@@ -1,3 +1,3 @@
-src/verilog/rtl/sec_controller.v
 src/verilog/rtl/psdsqrt.v
-src/verilog/testbench/sec_controller_tb.v
+src/verilog/rtl/controller.v
+src/verilog/testbench/testbench.v
