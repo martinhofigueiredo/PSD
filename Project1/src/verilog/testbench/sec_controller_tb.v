@@ -19,7 +19,7 @@ module sec_controller_tb;
 // general parameters 
 parameter CLOCK_PERIOD = 10;              // Clock period in ns
 parameter MAX_SIM_TIME = 100_000_000;     // Set the maximum simulation time (time units=ns)
-parameter NBITS=16;// par
+parameter NBITS=32;// par
 // Registers for driving the inputs:
 
 reg  clock, reset, run; 
