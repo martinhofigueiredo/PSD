@@ -1,0 +1,93 @@
+ISim log file
+Running: C:\usr\jca\FEUP\FEUP\Aulas\2021-2022\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\impl\sqrt\s6base_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/sqrt/s6base_tb_isim_beh.wdb 
+ISim P.68d (signature 0x7708f090)
+----------------------------------------------------------------------
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@giotto.fe.up.pt'.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to '1717@giotto.fe.up.pt'.
+WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
+WARNING:Security:44 - Since no license file was found,
+       please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses")
+       to assist in obtaining a license.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Starting verification...
+# run all
+[1] Expected result: sqrt(         0) =     0, returned     0
+[2] Expected result: sqrt(4294967295) = 65535, returned 65535
+[3] Expected result: sqrt(2147483648) = 46340, returned     0
+[3] Error: expected: sqrt(2147483648) = 46340, returned     0
+[4] Expected result: sqrt(         1) =     1, returned     1
+Failed:           1 errors found
+Simulating          50 random integers...
+[5] Error: expected: sqrt( 303379748) = 17417, returned 13604
+[6] Error: expected: sqrt(3230228097) = 56835, returned 24193
+[7] Error: expected: sqrt(2223298057) = 47151, returned 54793
+[8] Error: expected: sqrt(2985317987) = 54638, returned 22115
+[9] Error: expected: sqrt( 112818957) = 10621, returned 31501
+[10] Error: expected: sqrt(1189058957) = 34482, returned 39309
+passed 5... 
+[11] Error: expected: sqrt(2999092325) = 54763, returned 33893
+[12] Error: expected: sqrt(2302104082) = 47980, returned 21010
+[13] Error: expected: sqrt(  15983361) =  3997, returned 58113
+[14] Error: expected: sqrt( 114806029) = 10714, returned 52493
+[15] Error: expected: sqrt( 992211318) = 31499, returned 61814
+passed 10... 
+[16] Error: expected: sqrt( 512609597) = 22640, returned 52541
+[17] Error: expected: sqrt(1993627629) = 44650, returned 22509
+[18] Error: expected: sqrt(1177417612) = 34313, returned 63372
+[19] Error: expected: sqrt(2097015289) = 45793, returned 59897
+[20] Error: expected: sqrt(3812041926) = 61741, returned  9414
+passed 15... 
+[21] Error: expected: sqrt(3807872197) = 61707, returned 33989
+[22] Error: expected: sqrt(3574846122) = 59790, returned 53930
+[23] Error: expected: sqrt(1924134885) = 43864, returned 63461
+[24] Error: expected: sqrt(3151131255) = 56134, returned 29303
+[25] Error: expected: sqrt(2301810194) = 47977, returned 54802
+passed 20... 
+[26] Error: expected: sqrt(1206705039) = 34737, returned 56207
+[27] Error: expected: sqrt(2033215986) = 45091, returned 27122
+[28] Error: expected: sqrt(3883308750) = 62316, returned 38606
+[29] Error: expected: sqrt(4093672168) = 63981, returned 31464
+[30] Error: expected: sqrt(3804909253) = 61683, returned 20165
+passed 25... 
+[31] Error: expected: sqrt( 777537884) = 27884, returned 18780
+[32] Error: expected: sqrt(3733858493) = 61105, returned 10429
+[33] Error: expected: sqrt(2527811629) = 50277, returned 22573
+[34] Error: expected: sqrt(2997298789) = 54747, returned  9829
+[35] Error: expected: sqrt(2985255523) = 54637, returned 25187
+passed 30... 
+[36] Error: expected: sqrt(  91457290) =  9563, returned 34570
+[37] Error: expected: sqrt(3225100928) = 56789, returned  8832
+[38] Error: expected: sqrt( 274997536) = 16583, returned  8480
+[39] Error: expected: sqrt(1433945514) = 37867, returned 17834
+[40] Error: expected: sqrt(3469528221) = 58902, returned 52381
+passed 35... 
+[41] Error: expected: sqrt(3407888022) = 58377, returned 16022
+[42] Error: expected: sqrt(2307110931) = 48032, returned 47123
+[43] Error: expected: sqrt(2260482061) = 47544, returned 14349
+[44] Error: expected: sqrt(2846348883) = 53351, returned 54867
+[45] Error: expected: sqrt( 899669355) = 29994, returned 56683
+passed 40... 
+[46] Error: expected: sqrt(3936758485) = 62743, returned 10965
+[47] Error: expected: sqrt(2165787138) = 46538, returned 18946
+[48] Error: expected: sqrt(3612753582) = 60106, returned 16046
+[49] Error: expected: sqrt( 251652381) = 15863, returned 59677
+[50] Error: expected: sqrt(3888476879) = 62357, returned 29391
+passed 45... 
+[51] Error: expected: sqrt( 293882147) = 17142, returned 18723
+[52] Error: expected: sqrt(  84501770) =  9192, returned 25866
+[53] Error: expected: sqrt(3849521866) = 62044, returned  2762
+[54] Error: expected: sqrt(2654030908) = 51517, returned 19516
+Failed:          51 errors found
+Completed. Total errors:          51
+Stopped at time : 73500402 ns :  in File "C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-tb/s6base_tb.v" Line 183 
