@@ -1,0 +1,8 @@
+src/verilog-rtl/ioports.v
+src/verilog-rtl/psdsqrt.v
+src/verilog-rtl/s6base_top.v
+src/verilog-rtl/sqrt_control.v
+src/verilog-rtl/sqrt_datapath.v
+src/verilog-rtl/uart.v
+src/verilog-tb/s6base_tb.v
+src/verilog-tb/uart_sim.v

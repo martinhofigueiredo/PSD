@@ -374,10 +374,9 @@ begin
      5: from_inports = in5;
      6: from_inports = in6;
      7: from_inports = in7;
-	 15: from_inports = ATLYS_HWID;
+	 default: from_inports = ATLYS_HWID;
    endcase
 end
 
 
 endmodule
-

@@ -3,11 +3,11 @@
 
 Square root controller
  
-jca@fe.up.pt, Nov 2018 - May 2022
+jca@fe.up.pt, Nov 2018
 
 	This Verilog code is property of University of Porto
 	Its utilization beyond the scope of the course Digital Systems Design
-	(Projeto de Sistemas Digitais) of the Master in Electrical 
+	(Projeto de Sistemas Digitais) of the Integrated Master in Electrical 
 	and Computer Engineering requires explicit authorization from the author.
  
 */
@@ -38,26 +38,10 @@ reg [4:0] state;
 //stop  _____________________________________________________________________|   |_______
 //
 
-// The controller:
-always @(posedge clock)
-if (reset)
-  state <= 5'd0;
-else
-begin
-  case (state)
-    5'd0: if ( run )
-	        state <= 5'd1;
-	default: if ( state == 5'd17 )
-	           state <= 5'd0;
-			 else
-			   state <= state + 1;
-  endcase
-end
+// REPLACE WITH YOUR VERILOG CODE
 
-// Set outputs:
-assign start = run;
-assign stop  = ( state == 5'd17 ); 
-assign busy  = ( state != 5'd0  );
-
+assign start = 0;
+assign busy = 0;
+assign stop = 0;
 
 endmodule

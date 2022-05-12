@@ -40,7 +40,7 @@ Download  the  archive  PSD-2122-LAB2.zip  and  extract  all  files  to  a  new 
 | `./impl/sqrt`         |  ISE project directory (the project is already created)          |
 | `./src/data`          |  Additional source files (User Constraints File - UCF)           |
 | `./src/verilog-rtl`   |  RTL synthesizable Verilog modules                               |
-| `./src/verilog-tb`    | Simulation Verilog modules                                       |
+| `./src/verilog-tb`    |  Simulation Verilog modules                                      |
 | `./sw/bin`            |  Software application for accessing the FPGA system              | 
  
 As the  simulation  processes will now  be  launched  from the  XILINX ISE  environment,  the simulations will run in the same directory as the implementation (`./impl`).  
