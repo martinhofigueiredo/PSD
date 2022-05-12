@@ -15,7 +15,7 @@ This  exercise  is  based  on  the  XILINX  ISE  design  tools  that  still  sup
  
 Either the 14.6 or 14.7 versions can be used for this lab. The installation in Windows 10 requires  a  manual  correction  in  some  DLL  files  and  works  fine  after  that  (instructions available in the course web page). Alternatively, XILINX provides a supported 14.7 version for  Windows  10  that  actually  is  a  Linux  installation  running  on  a  VirtualBox  virtual machine. This solution requires more disk space than a native installation on Windows (40 GB for the ISE 14.7@Virtual machine vs. 16 GB for 14.6 native installation).  
  
-The verification stages will be done with the Verilog simulator integrated in ISE (iSim). This may  also  run  with  Icarus  Verilog  but  that  would  require  the  compilation  of  the  XILINX Verilog simulation libraries. The reference manual of the Atlys board can be found online in https://reference.digilentinc.com/atlys/atlys/refmanual . 
+The verification stages will be done with the Verilog simulator integrated in ISE (iSim). This may  also  run  with  Icarus  Verilog  but  that  would  require  the  compilation  of  the  XILINX Verilog simulation libraries. The reference manual of the Atlys board can be found [here](https://reference.digilentinc.com/atlys/atlys/refmanual). 
  
 ## 1. Introduction 
 ---
