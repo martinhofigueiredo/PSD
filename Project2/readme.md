@@ -20,25 +20,25 @@ The verification stages will be done with the Verilog simulator integrated in IS
 ## 1. Introduction 
 ---
 The design provided for this project implements the block diagram shown in figure 1. The block  psdsqrt  (psdsqrt.v)  includes  the  same  datapath  designed  in  the  previous laboratory project (sqrt_datapath.v) and the sequential controller (sqrt_control.v) required to generate the start and stop signals used by the datapath. The modules uart (uart.v) and iports (ioports.v) implement a set of 16 output ports and 8 inputs ports to/from  a  digital  system  (32  bit  wide),  accessed  via  a  serial  port  that  will  connect  the FPGA board to a PC. The module ioports interprets a small set of commands to write data to a 32-bit output port and read data from a 32-bit input port. This system can be used with a basic Windows application (figure 2) that allows communicating with an application digital system connected to the input and output ports. 
- 
-![figure1](doc/images/figure1.jpg)
-Figure 1 – Simplified block diagram of the reference project. 
 
-![figure2](doc/images/figure2.jpg)  
-Figure 2 – The software application for interfacing with the Atlys board. 
- 
+![figure1](doc/img/figure1.jpg)
+>_Figure 1_ – Simplified block diagram of the reference project. 
+
+![figure2](doc/img/figure2.jpg)  
+>_Figure 2_ – The software application for interfacing with the Atlys board. 
+
 In the design to be used in this lab, the module ioports connects to the sequential square root calculator: the operand xin is the data written to port 0, the square root calculation process starts by writing 1 to port 15 and the final result ( sqrt(X) ) is retrieved by reading from the input port 0 (note that this result will be available after 18 clock cycles that is a small fraction of the time needed to transmit a single byte through the serial port). The 5 general  purpose  push-buttons,  the  8  slide  switches  and  the  8  LEDs  (currently assigned to the 8 LSBits of operator xin) can be later used freely in your design. 
 
 ## 2. Installation of the reference project 
 ---
 Download  the  archive  PSD-2122-LAB2.zip  and  extract  all  files  to  a  new  working directory. Do not install this into the desktop or any other directory containing spaces or other special characters (like accents) in the full pathname. The installed directory tree is: 
  
-| Directory             |  Contents                                                       | 
+| Directory             |  Contents                                                        | 
 | ----------------------|------------------------------------------------------------------|
 | `./Matlab`            |  Matlab script for communication with the FPGA system            |
 | `./doc`               |  Documentation (this guide and the manual of Atlys FPGA board)   |
-| `./impl/sqrt`        |  ISE project directory (the project is already created)          |
-| `./src/data`         |  Additional source files (User Constraints File - UCF)           |
+| `./impl/sqrt`         |  ISE project directory (the project is already created)          |
+| `./src/data`          |  Additional source files (User Constraints File - UCF)           |
 | `./src/verilog-rtl`   |  RTL synthesizable Verilog modules                               |
 | `./src/verilog-tb`    | Simulation Verilog modules                                       |
 | `./sw/bin'`           |  Software application for accessing the FPGA system              | 
