@@ -50,7 +50,7 @@ reg [15:0]  regFile [0:63]
 
 reg [0:6]
 
-
+// -------- INPUT -------------
 always @(posedge clock ) begin
     //writing to register
     if( reset ) 
@@ -82,4 +82,50 @@ always @(posedge clock ) begin
     end
 end
 
+
+
+
+
+
+/* -------- CONSTANTS -------------
+   
+   
+   
+        0001
+          |
+    1001  |  0101
+1000 _____|_____   0100
+          |
+    1010  |  0110
+          |
+        0010
+    
+    
+    
+    |----------|----------|------------|
+    |  seloutX |  seloutX |  Constant  |
+    |----------|----------|------------|
+    |   4'h0   |   4'h0   |    0+j0    |
+    |   4'h0   |   4'h0   |    0+j0    |
+    |   4'h0   |   4'h0   |    0+j0    |
+    |   4'h0   |   4'h0   |    0+j0    |
+    
+
+*/
+always @(posedge clock ) begin
+    
+
+   
+
+
+end
+
+
+
+
+
+
+
+
 endmodule
+

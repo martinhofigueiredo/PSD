@@ -70,17 +70,19 @@ complexity of the circuit.
  
 The  write  and  read  operations  are  synchronous  with  the  clock.  The  writing  data  into  a 
 register is set by the following inputs: 
-inA: the data to write 
-regwen: register write enable must be set to 1 
-selwreg: specifies the address (0 to 15) of the destination register 
-endwreg:  enable  data  write:  specifies  which  data  field  is  written  to  the  register, 
-according to the following encoding: 2’b00: writes both data; 2’b01: writes only the high 
-32 bits; 2’b10: writes only the low 32 bits; 2’b11: swaps the high 32 bits with the low 32 
-bits 
- 
+- `inA`: the data to write 
+- `regwen`: register write enable must be set to 1 
+- `selwreg`: specifies the address (0 to 15) of the destination register 
+- `endwreg`:  enable  data  write:  specifies  which  data  field  is  written  to  the  register, 
+according to the following encoding: 
+- `2’b00`: writes both data
+- `2’b01`: writes only the high 32 bits
+- `2’b10`: writes only the low 32 bits
+- `2’b11`: swaps the high 32 bits with the low 32 
+bits.
+
 Data is read from the register bank to two independent ports in parallel, __outA__ and __outB__. 
-These two ports are implemented by two registers that are loaded with the data specified 
-by the read register control  signals:
+These two ports are implemented by two registers that are loaded with the data specified by the read register control  signals:
 - `seloutA/seloutB`: the register address to read into port A and B or the constant specifier if cnstA/cnstB is 1 
 - `enrregA/enrregB`: read enable, set to 1 to enable loading output registers __outA/outB__ 
 - `cnstA/cnstB`: set to zero to load output ports with data from registers, set to 1 to load the  output  ports  with  the  predefined  constants.  If  __cnstA/cnstB__  is  1  the  read  register address specifies the constant to load into the output ports. 
@@ -117,28 +119,14 @@ The interface of this module and the Verilog header of the RTL code is presented
  
  
 ## 3 – Arithmetic and logic unit for complex numbers (module __ALUX__) 
-Module  __ALUX__  implements  a  set  of  functional  units  for  performing  arithmetic  and  logic 
-operations on complex numbers. The __ALUX__ receives two 64-bit operands and produces one 
-64-bit  result.  The  operands  and  the  result  are  composed  by  two  32-bit  fields  (signed 
-integer),  referred  to  by  RE  (the  high  32  bits)  and  IM  (the  low  32  bits).  For  complex 
-arithmetic operations, RE and IM represent the real and imaginary parts a complex data 
-and for real arithmetic operations, the RE and IM fields are treated as two independent 
-integers. 
+Module  __ALUX__  implements  a  set  of  functional  units  for  performing  arithmetic  and  logic operations on complex numbers. The __ALUX__ receives two 64-bit operands and produces one 64-bit  result.  The  operands  and  the  result  are  composed  by  two  32-bit  fields  (signed integer),  referred  to  by  RE  (the  high  32  bits)  and  IM  (the  low  32  bits).  For  complex arithmetic operations, RE and IM represent the real and imaginary parts a complex data and for real arithmetic operations, the RE and IM fields are treated as two independent integers. 
  
-The interface of the __ALUX__ is presented in figure 3. Signals inA and inB are the two 64-bit 
-operands  and  outAB  is  the  64-bit  result.  The  execution  of  the  arithmetic  and  logic 
-operations by module __ALUX__ is controlled by two handshake signals start and done and a 5-
-bit control word, opr, defining the operation to execute.  
+The interface of the __ALUX__ is presented in figure 3. Signals inA and inB are the two 64-bit operands  and  outAB  is  the  64-bit  result.  The  execution  of  the  arithmetic  and  logic operations by module __ALUX__ is controlled by two handshake signals start and done and a 5-bit control word, opr, defining the operation to execute.  
  
-The __ALUX__ operation starts when signal start is set to 1 and the result is ready at output 
-outAB when signal done is asserted. Both handshake signals are set to 1 during a single 
-clock  cycle.  After  initiating  an  operation,  the  input  start  must  be  ignored  until  the 
-operation is completed (done set to 1).  
-The operations implemented by module __ALUX__ require a variable number of clock cycles, as 
-illustrated in the timing diagram of figure 4. 
+The __ALUX__ operation starts when signal start is set to 1 and the result is ready at output outAB when signal done is asserted. Both handshake signals are set to 1 during a single clock  cycle.  After  initiating  an  operation,  the  input  start  must  be  ignored  until  the operation is completed (done set to 1).  
+The operations implemented by module __ALUX__ require a variable number of clock cycles, as illustrated in the timing diagram of figure 4. 
  
-The initial set of operations to be implemented are described in next table, including the 
-indication of the maximum duration of each operation, in clock cycles: 
+The initial set of operations to be implemented are described in next table, including the indication of the maximum duration of each operation, in clock cycles: 
 
 | opr index | Operation: outAB <= ...| Max clocks |                             | 
 |-----------|------------------------|------------|-----------------------------|
@@ -156,9 +144,9 @@ indication of the maximum duration of each operation, in clock cycles:
 
 >![figure3](doc/img/img3.png)
 >
->Figure 3 – Interface of the complex __ALU__ (module __ALU__X.v) 
+>Figure 3 – Interface of the complex __ALUX__ (module `alux.v`) 
  
 >![figure4](doc/img/img4.png)
 >
->Figure 4 – __ALU__X timing diagram 
+>Figure 4 – __ALUX__ timing diagram 
  
