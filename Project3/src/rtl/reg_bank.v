@@ -42,9 +42,13 @@ module reg_bank(
   input         enrregB  // Read enable to output register outB (loads output register) 
     ); 
 
-reg [15:0]  regFile [0:32]
+//reg [15:0]  regFile [0:32] --> Nao percebo isto nao deveriam ser 16 registos de 64 bits?
+//                               ou entao tenho que ter 2 reg files ? idk....
 
+// 
+reg [15:0]  regFile [0:63]
 
+reg [0:6]
 
 
 always @(posedge clock ) begin
@@ -59,7 +63,7 @@ always @(posedge clock ) begin
         case(endwreg) 
             // Write both data
             2'b00:  begin
-                        
+
                     end
             // Writes only the low 32 bits
             2'b01:  begin
