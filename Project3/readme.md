@@ -73,12 +73,11 @@ register is set by the following inputs:
 - `inA`: the data to write 
 - `regwen`: register write enable must be set to 1 
 - `selwreg`: specifies the address (0 to 15) of the destination register 
-- `endwreg`:  enable  data  write:  specifies  which  data  field  is  written  to  the  register, 
-according to the following encoding: 
-- `2’b00`: writes both data
-- `2’b01`: writes only the high 32 bits
-- `2’b10`: writes only the low 32 bits
-- `2’b11`: swaps the high 32 bits with the low 32 
+- `endwreg`:  enable  data  write:  specifies  which  data  field  is  written  to  the  register, according to the following encoding: 
+    - `2’b00`: writes both data
+    - `2’b01`: writes only the high 32 bits
+    - `2’b10`: writes only the low 32 bits
+    - `2’b11`: swaps the high 32 bits with the low 32 
 bits.
 
 Data is read from the register bank to two independent ports in parallel, __outA__ and __outB__. 

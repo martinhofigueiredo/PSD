@@ -28,7 +28,7 @@
     |     5     |    00101    |            A / B             |     40     | Complex division                      | 
     |     6     |    00110    | RE(A) * RE(B), IM(A) * IM(B) |      4     | Real multiplication                   |
     |     7     |    00111    | RE(A) / RE(B), IM(A) / IM(B) |     34     | Real division                         |
-    |     8     |    01000    |         A == B               |      1     |  Equality compare                     |
+    |     8     |    01000    |         A == B               |      1     | Equality compare                      |
     |     9     |    01001    |      { MOD(A), ANG(A) }      |     38     | Conversion to polar coords, operand A |
     |    10     |    01010    |      { MOD(B), ANG(B) }      |     38     | Conversion to polar coords, operand B | 
     |-----------|-------------|------------------------------|------------|---------------------------------------|
@@ -140,7 +140,7 @@ always @(posedge clock ) begin
         end
 
         EQUAL: begin
-            outAB <= (A == B)?64'd0:64'd1;
+            outAB <= (A == B) ? 64'd0 : 64'd1;
         end
 
         REC2POL: begin
