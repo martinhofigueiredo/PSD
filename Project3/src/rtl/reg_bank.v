@@ -1,7 +1,5 @@
 /*
-
-        reg_bank
-
+           reg_bank
       ___________________
   64 |                   | 64
 --|->|inA            outA|-|->
@@ -26,7 +24,7 @@ module reg_bank(
   input         reset,  // Master reset, synchronous and active high 
  
   //--- Data input port ----------------------------------------------------   
-  input         regwe,  // Register write enable: set to 1 to write the register 
+  input         regwen,  // Register write enable: set to 1 to write the register 
       //   selected by selwreg with the data at port inA 
   input  [63:0] inA,  // Data input 
   input  [ 3:0] selwreg,  // Select register index [0 to 15] to write data from port inA 
@@ -47,6 +45,37 @@ module reg_bank(
 reg [15:0]  regFile [0:32]
 
 
+
+
 always @(posedge clock ) begin
     //writing to register
+    if( reset ) 
+        begin
+            //Make All outputs zero
+            outA <= 0;
+            outB <= 0;
+        end
+    else if( regwen )begin
+        case(endwreg) 
+            // Write both data
+            2'b00:  begin
+                        
+                    end
+            // Writes only the low 32 bits
+            2'b01:  begin
+            
+                    end
+            // Writes only the high 32 bits
+            2'b10:  begin
+            
+                    end
+            // Swaps the high 32 bits with the low 32 bits
+            2'b11:  begin
+            
+                    end
+
+        endcase
+    end
 end
+
+endmodule

@@ -77,9 +77,81 @@ module alux(
   output         done  // Read enable to output register outB (loads output register) 
     ); 
 
-reg [15:0]  regFile [0:32]
+//reg [15:0]  regFile [0:32]
 
 
 always @(posedge clock ) begin
     //writing to register
+
 end
+
+
+
+parameter   A       = 5'b00000,
+            B       = 5'b00001,
+            PLUS    = 5'b00010,
+            MINUS   = 5'b00011,
+            MULT    = 5'b00100,
+            DIV     = 5'b00101,
+            RMULT   = 5'b00110,
+            RDIV    = 5'b00111,
+            EQUAL   = 5'b01000,
+            REC2POL = 5'b01001,
+            POL2REC = 5'b01010;
+        //  RMULT   = 5'b01011,
+        //  RDIV    = 5'b01100,
+
+
+always @(posedge clock ) begin
+    case(opr)
+ 
+        A: begin
+            outAB <=inA;
+        end
+ 
+        B: begin
+            outAB <=inB;
+        end
+
+        PLUS: begin
+            outAB <= inA + inB; 
+        end
+
+        MINUS: begin
+            outAB <= inA - inB; 
+        end
+
+        MULT: begin
+            outAB <= inA * inB; 
+        end
+ 
+        DIV: begin
+            outAB <= inA / inB; 
+        end
+
+        RMULT: begin
+            outAB[0:31] <= inA[0:31] * inB[0:31]
+            outAB[31:63] <= inA[31:63] * inB[31:63]
+        end
+
+        RDIV: begin
+            outAB[0:31] <= inA[0:31] / inB[0:31]
+            outAB[31:63] <= inA[31:63] / inB[31:63]
+        end
+
+        EQUAL: begin
+            outAB <= (A == B)?64'd0:64'd1;
+        end
+
+        REC2POL: begin
+            // TODO
+        end
+
+        POL2REC: begin
+            // TODO
+        end
+
+    endcase
+end
+
+endmodule
