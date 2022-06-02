@@ -1,11 +1,24 @@
 /*
-     ________
-    |        |
-    |        |
-    |        |
-    |        |
-    |        |
-    |________|
+
+        reg_bank
+
+      ___________________
+  64 |                   | 64
+--|->|inA            outA|-|->
+---->|regwe              | 64
+  4  |               outB|-|->  
+--|->|selwreg            |
+  2  |                   |  4
+--|->|endreg      seloutA|<-|-
+     |                   |  4
+     |            seloutB|<-|-
+     |                   |
+     |              cnstA|<---
+---->|reset         cnstB|<---
+     |            enrregA|<---
+     |            enrregB|<---
+---->|>clock             |
+     |___________________|
 
 */
 module reg_bank( 
