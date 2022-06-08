@@ -96,8 +96,8 @@ parameter   A       = 5'b00000,
             RMULT   = 5'b00110,
             RDIV    = 5'b00111,
             EQUAL   = 5'b01000,
-            REC2POL = 5'b01001,
-            POL2REC = 5'b01010;
+            POLA = 5'b01001,
+            POLB = 5'b01010;
         //  RMULT   = 5'b01011,
         //  RDIV    = 5'b01100,
 
@@ -143,11 +143,11 @@ always @(posedge clock ) begin
             outAB <= (A == B) ? 64'd0 : 64'd1;
         end
 
-        REC2POL: begin
+        POLB: begin
             // TODO
         end
 
-        POL2REC: begin
+        POLB: begin
             // TODO
         end
 
