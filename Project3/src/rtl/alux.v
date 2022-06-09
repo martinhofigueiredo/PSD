@@ -98,41 +98,41 @@ always @(posedge clock ) begin
     case(opr)
  
         A: begin
-            outAB <=inA;
+            outAB =inA;
         end
  
         B: begin
-            outAB <=inB;
+            outAB =inB;
         end
 
         PLUS: begin
-            outAB <= inA + inB; 
+            outAB = inA + inB; 
         end
 
         MINUS: begin
-            outAB <= inA - inB; 
+            outAB = inA - inB; 
         end
 
         MULT: begin
-            outAB <= inA * inB; 
+            outAB = inA * inB; 
         end
  
         DIV: begin
-            outAB <= inA / inB; 
+            outAB = inA / inB; 
         end
 
         RMULT: begin
-            outAB[31:0] <= inA[31:0] * inB[31:0];
-            outAB[63:31] <= inA[63:31] * inB[63:31];
+            outAB[31:0] = inA[31:0] * inB[31:0];
+            outAB[63:31] = inA[63:31] * inB[63:31];
         end
 
         RDIV: begin
-            outAB[31:0] <= inA[31:0] / inB[31:0];
-            outAB[63:31] <= inA[63:31] / inB[63:31];
+            outAB[31:0] = inA[31:0] / inB[31:0];
+            outAB[63:31] = inA[63:31] / inB[63:31];
         end
 
         EQUAL: begin
-            outAB <= (A == B) ? 64'd0 : 64'd1;
+            outAB = (A == B) ? 64'd0 : 64'd1;
         end
 
         POLB: begin

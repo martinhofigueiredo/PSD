@@ -17,12 +17,7 @@ compile: sim/simfiles.txt
 	iverilog -c sim/simfiles.txt -o sim/iverilog/project1.out
 
 simulate: 
-	vvp sim/iverilog/project1.out 
-	make movefile
-
-movefile:
-	mv project1.vcd  sim/vpp/simulationdata.vcd
-
+	vvp sim/iverilog/project1.out && mv project3.vcd  sim/vpp/simulationdata.vcd
 print:
 	head sim/vpp/simulationdata.vcd > sim/vpp/small.vcd
 	vcdcat -d sim/vpp/small.vcd

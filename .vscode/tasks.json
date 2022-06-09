@@ -10,7 +10,7 @@
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "dependsOn": "Make list of files"
         },
@@ -31,8 +31,9 @@
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": false
-            }
+                "isDefault": true
+            },
+            "dependsOn": "Compile with Iverilog"
         }
     ]
 }

@@ -1,5 +1,4 @@
 src/rtl/alux.v
 src/rtl/reg_bank.v
-src/tb/tb.v
 src/tb/uart_sim.v
 src/tb/reg_bank_tb.v

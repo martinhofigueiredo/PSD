@@ -95,25 +95,35 @@ always @ (posedge clock ) begin
 //writing to register
 if( reset ) begin
     //Make All outputs zero
-    //outA <= 64'd0;
-    //outB <= 64'd0;
+    //outA = 64'd0;
+    //outB = 64'd0;
 end
 else if( regwen  ) begin
   case(endreg) 
       // Write both data
       2'b00:  begin
-              regFile[selwreg]  <= inA;
-              $display("inA: 0x%0h");
+              regFile[selwreg]  = inA;
+              $display("inA: 0b%64b\n", inA);
+              $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
+              
               end
       // Writes only the low 32 bits
       2'b01:  begin
-              regFile[selwreg]  <= inA;
+              regFile[selwreg]  = {32'd0 ,  inA[31:0]};
+              $display("inA: 0b%64b\n", inA);
+              $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
               end
       // Writes only the high 32 bits
       2'b10:  begin
+              regFile[selwreg]  = {inA[63:31], 32'd0};
+              $display("inA: 0b%64b\n", inA);
+              $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
               end
       // Swaps the high 32 bits with the low 32 bits
       2'b11:  begin
+              regFile[selwreg]  = {inA[31:0],inA[63:31]}; 
+              $display("inA: 0b%64b\n", inA);
+              $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
               end
     endcase
   
