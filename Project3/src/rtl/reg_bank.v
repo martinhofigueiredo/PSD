@@ -126,7 +126,16 @@ else if( regwen  ) begin
               $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
               end
     endcase
-  
+  end
+  else if(enrregA) begin
+        outA = regFile[seloutA];
+        $display("outA: 0b%64b\n", outA);
+        $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
+  end
+  else if(enrregB) begin
+        outB = regFile[seloutB];
+        $display("outB: 0b%64b\n", outB);
+        $display("regFile[selwreg]: 0b%64b\n", regFile[selwreg]);
   end
 end
 

@@ -34,6 +34,17 @@
                 "isDefault": true
             },
             "dependsOn": "Compile with Iverilog"
+        },
+        {
+            "label": "View Results in gtkwave",
+            "type": "shell",
+            "command": "gtkwave Project3/sim/vpp/simulationdata.vcd",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Compile with Iverilog"
         }
     ]
 }

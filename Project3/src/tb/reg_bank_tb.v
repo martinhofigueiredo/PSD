@@ -7,8 +7,10 @@ parameter CLOCK_PERIOD    = 10; // ns
 // clocks:
 reg				clk100M, reset_n;
 reg       [63:0]inA;
-output      [63:0]outA;
-output       [63:0]outB;
+output    [63:0]outA;
+output    [63:0]outB;
+reg       [63:0]outA_buff;
+reg       [63:0]outB_buff;
 reg       [1:0]endreg;
 reg       [3:0]selwreg;
 reg       [3:0]seloutB;
@@ -48,26 +50,81 @@ end
 
 initial
 begin
+  # 123
+  reset_n = 0;
+  # 200
+  reset_n = 1;
+end		
+
+
+initial
+begin
   $dumpfile("project3.vcd");
   $dumpvars(0, reg_bank_1 );
 end	
 
 initial
 begin
-  $display("calou");
-  inA = 64'd0;
-  $display("inA: 0b%64b\n", inA);
-  inA = 64'd234;
-  $display("inA: 0b%64b\n", inA);
+  $display("Test Task\n\n");
+  writereg(64'd24,4'hA,2'b0);
+  #50
+
+  readreg(outA_buff,4'hA,1'b1,outB_buff,4'hB,1'b1);
+  #50
+
+  // writereg(64'd8765786,4'hA,2'b0);
+  // writereg(64'd2341234,4'hB,2'b0);
+  // #50000
+  // readreg(outA_buff,4'hA,1'b1,outB_buff,4'hB,1'b1);
+  // #50
+
+  $finish;
 end
 
-//sim task writetoreg;
-// input [63:0] inA;
-// input [ 3:0] selwreg;
-// input [ 1:0] endreg;
-// begin
+task readreg;
+  output [63:0] dataA;
+  input [ 3:0] selA;
+  input regA;
+  output [63:0] dataB;
+  input [ 3:0] selB;
+  input regB;
+  begin
+    $display("HELLO READ");
+    @(negedge clk100M);
+    seloutA = selA;
+    enrregA = regA;
+    #10
+    dataA = outA;
+    $display("outA: 0b%64b\n", dataA);
+    seloutB = selB;
+    enrregB = regB;
+    #10
+    dataB = outB;
+    $display("outB: 0b%64b\n", dataB);
 
-// end
-// endtask
+    @(negedge clk100M);
+  end
+endtask
+
+task writereg;
+  input [63:0] datain;
+  input [ 3:0] sel;
+  input [ 1:0] mode;
+  begin
+    $display("HELLO WRITE");
+    @(negedge clk100M);
+    regwen = 1'b1;
+    inA <= datain;
+    $display("datain: 0b%64b\n", datain);
+    $display("inA: 0b%64b\n", inA);
+    
+    selwreg = sel;
+    endreg = mode;
+    #10
+    regwen = 1'b0;
+    @(negedge clk100M);
+  end
+endtask
+
 
 endmodule
