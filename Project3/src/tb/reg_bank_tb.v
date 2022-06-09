@@ -65,20 +65,17 @@ end
 
 initial
 begin
-  $display("Test Task\n\n");
+  $display("Test Task\n");
   writereg(64'd24,4'hA,2'b0);
-  #50
-
+  writereg(64'd25,4'hB,2'b0);
   readreg(outA_buff,4'hA,1'b1,outB_buff,4'hB,1'b1);
-  #50
 
   // writereg(64'd8765786,4'hA,2'b0);
   // writereg(64'd2341234,4'hB,2'b0);
   // #50000
   // readreg(outA_buff,4'hA,1'b1,outB_buff,4'hB,1'b1);
-  // #50
 
-  $finish;
+  $stop;
 end
 
 task readreg;
