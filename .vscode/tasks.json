@@ -1,0 +1,38 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile with Iverilog",
+            "type": "shell",
+            "command": "cd Project3 && make compile",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Make list of files"
+        },
+        {
+            "label": "Make list of files",
+            "type": "shell",
+            "command": "cd Project3 && make list",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "Simulate",
+            "type": "shell",
+            "command": "cd Project3 && make simulate",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

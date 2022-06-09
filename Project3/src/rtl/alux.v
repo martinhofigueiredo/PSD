@@ -79,14 +79,6 @@ module alux(
 
 //reg [15:0]  regFile [0:32]
 
-
-always @(posedge clock ) begin
-    //writing to register
-
-end
-
-
-
 parameter   A       = 5'b00000,
             B       = 5'b00001,
             PLUS    = 5'b00010,
@@ -96,8 +88,8 @@ parameter   A       = 5'b00000,
             RMULT   = 5'b00110,
             RDIV    = 5'b00111,
             EQUAL   = 5'b01000,
-            POLA = 5'b01001,
-            POLB = 5'b01010;
+            POLA    = 5'b01001,
+            POLB    = 5'b01010;
         //  RMULT   = 5'b01011,
         //  RDIV    = 5'b01100,
 
@@ -130,13 +122,13 @@ always @(posedge clock ) begin
         end
 
         RMULT: begin
-            outAB[0:31] <= inA[0:31] * inB[0:31]
-            outAB[31:63] <= inA[31:63] * inB[31:63]
+            outAB[31:0] <= inA[31:0] * inB[31:0];
+            outAB[63:31] <= inA[63:31] * inB[63:31];
         end
 
         RDIV: begin
-            outAB[0:31] <= inA[0:31] / inB[0:31]
-            outAB[31:63] <= inA[31:63] / inB[31:63]
+            outAB[31:0] <= inA[31:0] / inB[31:0];
+            outAB[63:31] <= inA[63:31] / inB[63:31];
         end
 
         EQUAL: begin
