@@ -73,11 +73,11 @@ module alux(
   input  [63:0] inB,  // Data input Operator B
   input  [ 4:0] opr,  // Select operation [0 to 4] from table
   //--- Data output ports --------------------------------------------------   
-  output reg [63:0] outAB,  // Data output A, registered 
+  output reg [63:0] outAB,  // Data output A, [31:0] imaginary part ; [63:31] real part
   output         done  // Read enable to output register outB (loads output register) 
     ); 
 
-//reg [15:0]  regFile [0:32]
+reg signed [31:0] aux;
 
 parameter   A       = 5'b00000,
             B       = 5'b00001,
@@ -92,55 +92,80 @@ parameter   A       = 5'b00000,
             POLB    = 5'b01010;
         //  RMULT   = 5'b01011,
         //  RDIV    = 5'b01100,
+		
 
-
-always @(posedge clock ) begin
-    case(opr)
+always @(posedge clock && start) begin
+    done = 1'b0;
+	case(opr)
  
         A: begin
             outAB =inA;
+			done = 1'b1;
         end
  
         B: begin
             outAB =inB;
+			done = 1'b1;
         end
 
         PLUS: begin
-            outAB = inA + inB; 
+			outAB[31:0] <= inA[31:0] + inB[31:0];
+            outAB[63:31] <= inA[63:31] + inB[63:31]; 
+			done = 1'b1;
         end
 
         MINUS: begin
-            outAB = inA - inB; 
+            outAB[31:0] <= inA[31:0] - inB[31:0];
+            outAB[63:31] <= inA[63:31] - inB[63:31]; 
+			done = 1'b1;
         end
 
         MULT: begin
-            outAB = inA * inB; 
+			// (ar + j*ai)*(br + j*bi) = ar*br-ai*bi + j*(bi*ar + ai*br) 
+            outAB[31:0] <= inA[63:32] * inB[63:32] - inA[31:0] * inB[31:0];
+			outAB[63:32] <= inB[31:0] * inA[63:32] + inA[31:0] * inB[63:32];
+			done = 1'b1;
         end
  
         DIV: begin
-            outAB = inA / inB; 
+			// (ar + j*ai)/(br + j*bi) = ((ar+j*ai) * (br-j*bi))/((br-j*bi) * (br+j*bi)) = (ar*br + ai*bi +j(ai*br-ar*bi)) / (br*br + bi*bi)
+            aux = (inB[63:32] * inB[63:32]) + (inB[31:0] * inB[31:0]);
+			outAB[63:32] <= (inA[63:32] * inB[63:32] + inA[31:0] * inB[31:0]) / aux;
+			outAB[31:0] <= (inA[31:0] * inB[63:32] - inA[63:32] * inB[31:0]) / aux;
+			done = 1'b1;
         end
 
         RMULT: begin
-            outAB[31:0] = inA[31:0] * inB[31:0];
-            outAB[63:31] = inA[63:31] * inB[63:31];
-        end
+            outAB[31:0] <= inA[31:0] * inB[31:0];
+            outAB[63:32] <= inA[63:32] * inB[63:32];
+			done = 1'b1;
+		end
 
         RDIV: begin
-            outAB[31:0] = inA[31:0] / inB[31:0];
-            outAB[63:31] = inA[63:31] / inB[63:31];
-        end
+            outAB[31:0] <= inA[31:0] / inB[31:0];
+            outAB[63:32] <= inA[63:32] / inB[63:32];
+			done = 1'b1;
+		end
 
         EQUAL: begin
-            outAB = (A == B) ? 64'd0 : 64'd1;
+            outAB <= (A == B) ? 64'd0 : 64'd1;
+			done = 1'b1;
+		end
+
+        POLA: begin
+			// modulus = sqrt(ar^2 + ai^2)
+			// phase = cotg(ai/ar)
+			outAB[63:32] <= inA[63:32] * inA[31:0];
+			outAB[31:0] <= cotg(inA[31:0] / inA[63:32])
+			done = 1'b1;
         end
 
         POLB: begin
-            // TODO
-        end
-
-        POLB: begin
-            // TODO
+			// modulus = sqrt(bi^2 + br^2)
+			// phase = cotg(bi/br)
+            outAB[63:32] <= inB[63:32] * inB[31:0];
+			outAB[31:0] <= cotg(inB[31:0]/inB[63:32]);
+			done = 1'b1;
         end
 
     endcase
