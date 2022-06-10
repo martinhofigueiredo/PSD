@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Register Bank
 
 on:
   push:
@@ -18,13 +18,13 @@ jobs:
       run: sudo apt-get install iverilog
       
     - name: Make List
-      run: cd Project1 && make list
+      run: cd Project3 && make list
       
     - name: Make Module
-      run: cd Project1 && make module
+      run: cd Project3 && make module
       
     - name: Make Compile check
-      run: cd Project1 && make compile
+      run: cd Project3 && make compile
      
     - name: Simulate 
-      run: cd Project1 && make simulate
+      run: cd Project3 && make simulate
