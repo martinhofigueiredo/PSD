@@ -74,11 +74,10 @@ module alux(
   input  [ 4:0] opr,  // Select operation [0 to 4] from table
   //--- Data output ports --------------------------------------------------   
   output reg [63:0] outAB,  // Data output A, [31:0] imaginary part ; [63:31] real part
-  output         done  // Read enable to output register outB (loads output register) 
+  output reg        done  // Read enable to output register outB (loads output register) 
     ); 
 
 reg signed [31:0] aux;
-
 parameter   A       = 5'b00000,
             B       = 5'b00001,
             PLUS    = 5'b00010,
@@ -111,7 +110,7 @@ always @(posedge clock && start) begin
         PLUS: begin
 			outAB[31:0] <= inA[31:0] + inB[31:0];
             outAB[63:31] <= inA[63:31] + inB[63:31]; 
-			done = 1'b1;
+			done <= 1'b1;
         end
 
         MINUS: begin
@@ -154,21 +153,28 @@ always @(posedge clock && start) begin
 
         POLA: begin
 			// modulus = sqrt(ar^2 + ai^2)
-			// phase = cotg(ai/ar)
+			// phase = atan(ai/ar)
 			outAB[63:32] <= inA[63:32] * inA[31:0];
-			outAB[31:0] <= cotg(inA[31:0] / inA[63:32])
+			outAB[31:0] <= atan(inA[31:0] / inA[63:32]);
 			done = 1'b1;
         end
 
         POLB: begin
 			// modulus = sqrt(bi^2 + br^2)
-			// phase = cotg(bi/br)
+			// phase = atan(bi/br)
             outAB[63:32] <= inB[63:32] * inB[31:0];
-			outAB[31:0] <= cotg(inB[31:0]/inB[63:32]);
-			done = 1'b1;
+			outAB[31:0] <= atan(inB[31:0]/inB[63:32]);
+            done = 1'b1;
         end
 
     endcase
 end
+
+function [31:0] atan(input [31:0] );
+    
+    
+endfunction
+
+
 
 endmodule

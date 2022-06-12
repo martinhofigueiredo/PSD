@@ -1,4 +1,14 @@
+src/rtl/sqrt_control.v
+src/rtl/s6base_top.v
+src/rtl/psdsqrt.v
 src/rtl/alux.v
 src/rtl/reg_bank.v
+src/rtl/sqrt_datapath.v
+src/rtl/ioports.v
+src/rtl/uart.v
 src/tb/uart_sim.v
+src/tb/s6base_tb.v
 src/tb/reg_bank_tb.v
+src/verilog-IPs/ITERCOUNTER.v
+src/verilog-IPs/ATAN_ROM.v
+src/verilog-IPs/MODSCALE.v

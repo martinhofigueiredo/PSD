@@ -12,7 +12,7 @@ jca@fe.up.pt, Nov 2018 - May 2022
  
 */
 
-module psdsqrt(
+module sqrt(
 					input clock,		//master clock
 					input reset,		//synch reset, active high
 					input run,		    //start a new sqrt

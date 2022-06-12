@@ -14,9 +14,9 @@ Nbits_LUT = 32;
 Nsamples_LUT   = 32;
 
 % Uncomment the following like to run this script in Octave:
-% pkg load signal
+pkg load signal
 
-% The following hex files can be read by the Verilog testbench with 
+% The following hex files can be read by the Verilog testbench with
 % the Verilog system task $readmemh()
 
 %% define the parameters:
@@ -24,9 +24,9 @@ Nsamples_LUT   = 32;
 % Lookup-table for the DDS
 % in radians, 0QNbits_LUT format (0 bits for integer part, 32 bits for
 % the fractional part)
-atanLUTfile    = '../simdata/atanLUT.hex'; 
+atanLUTfile    = '../simdata/atanLUT.hex';
 
-% in degrees, 
+% in degrees,
 atanLUTfiled    = '../simdata/atanLUTd.hex';
 
 % tangents, 2^0 to 2^(Nsamples_LUT-1):
@@ -49,7 +49,7 @@ if enableplot == 1
 end
 
 %------------------------------
-% CORDIC 
+% CORDIC
 X = X0;
 Y = Y0;
 Z = 0;
