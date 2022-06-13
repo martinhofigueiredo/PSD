@@ -160,20 +160,50 @@ ioports ioports_1
 				   .outf(PFout)            // PF output port has automatic return to zero
 					);
 
-wire run, busy;
-wire [31:0] xin;
-wire [15:0] sqrt;
-
-	 
-psdsqrt  psdsqrt_1(
-       .clock( clockext100MHz ),  //master clock
-	   .reset( reset ),           //synch reset, active high
-	   .run( run ),               //start a new sqrt
-	   .busy( busy ),             // busy, high while sqrt is running
-	   .xin( xin ),               // argument
-	   .sqrt( sqrt )	          // square root
+wire start, busy, done;
+wire [63:0] inA;
+wire [63:0] inB;
+wire [63:0] xin;
+wire [63:0] outA;
+wire [63:0] outB;
+wire [31:0] sqrt;
+wire [3:0] selwreg;
+wire [1:0] endreg;
+wire [3:0] seloutA;
+wire cnstA;
+wire enrregA;
+wire [3:0] seloutB;
+wire cnstB;
+wire enrregB;
+wire [4:0] opr;
+wire [63:0] outAB;
+	  
+alux  alux_1(
+       .clock( clockext100MHz ),  	  // master clock
+	   .reset( reset ),           	  // synch reset, active high
+	   .start( start ),               // start signal ALU
+	   .inA( inA ),         		  // argument A
+	   .inB( inB ),     	          // argument B
+	   .opr( opr ),		              // op code
+	   .done( done )
 	);
 	 
+reg_bank reg_bank1(
+					.clock( clockext100MHz ),
+					.reset( reset ),
+					.inA(xin),
+					.selwreg(selwreg),
+					.endreg(endreg),
+					.outB(outB),
+					.outA(outA),
+					.seloutA(seloutA),
+					.seloutB(seloutB),
+					.cnstA(cnstA),
+					.cnstB(cnstB),
+					.enrregA(enrregA),
+					.enrregB(enrregB)
+);
+
 	 
 // Connect inputs and outputs:	 
 assign xin = P0out;
