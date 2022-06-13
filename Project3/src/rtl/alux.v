@@ -78,7 +78,7 @@ module alux(
     ); 
 
 reg signed [31:0] aux;
-parameter   A       = 5'b00000,
+parameter   A       = 5'b00000, // Declare Operation Values
             B       = 5'b00001,
             PLUS    = 5'b00010,
             MINUS   = 5'b00011,
@@ -98,18 +98,18 @@ always @(posedge clock && start) begin
 	case(opr)
  
         A: begin
-            outAB =inA;
+            outAB =inA; // output is A
 			done = 1'b1;
         end
  
         B: begin
-            outAB =inB;
+            outAB =inB; //output is B
 			done = 1'b1;
         end
 
         PLUS: begin
-			outAB[31:0] <= inA[31:0] + inB[31:0];
-            outAB[63:31] <= inA[63:31] + inB[63:31]; 
+			outAB[31:0] <= inA[31:0] + inB[31:0]; // Sum imaginary parts
+            outAB[63:31] <= inA[63:31] + inB[63:31]; // Sum real part
 			done <= 1'b1;
         end
 
@@ -170,11 +170,35 @@ always @(posedge clock && start) begin
     endcase
 end
 
-function [31:0] atan(input [31:0] );
-    
-    
-endfunction
+psdsqrt  psdsqrt_1(
+       .clock( clockext100MHz ),  //master clock
+	   .reset( reset ),           //synch reset, active high
+	   .run( run ),               //start a new sqrt
+	   .busy( busy ),             // busy, high while sqrt is running
+	   .xin( xin ),               // argument
+	   .sqrt( sqrt )	          // square root
+	);
 
+
+
+psdatan  psdatan_1(
+       .clock( clockext100MHz ),  //master clock
+	   .reset( reset ),           //synch reset, active high
+	   .run( run ),               //start a new sqrt
+	   .busy( busy ),             // busy, high while sqrt is running
+	   .xin( xin ),               // argument
+	   .sqrt( sqrt )	          // square root
+	);
+
+
+    function [31:0]sqrt;
+		input 	[31:0] xin;
+		begin
+			xin <= xin;
+			run = 1'b1;
+			sqrt <= $signed(sqrt);
+		end		
+	endfunction
 
 
 endmodule

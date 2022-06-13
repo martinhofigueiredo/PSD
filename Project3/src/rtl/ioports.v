@@ -1,5 +1,5 @@
 /*
- General purpose I/O ports (32 bits)
+ General porpose I/O ports (32 bits)
  Output port "outf" has automatic return to zero after 4 clock cycles
 
 Generic top level module for the Atlys Board
@@ -34,19 +34,19 @@ module ioports( clk,    // master clock
                 out1, 
                 out2, 
                 out3, 
-  			    out4, 
-				out5,   
-				out6,
-				out7,
-				out8,   
-				out9,   
-				outa,
-				outb,
-				outc,   
-				outd,   
-				oute,
-				outf    // port f has automatic return to zero after 4 clock cycles
-                );
+      			    out4, 
+                out5,   
+                out6,
+                out7,
+                out8,   
+                out9,   
+                outa,
+                outb,
+                outc,   
+                outd,   
+                oute,
+                outf    // port f has automatic return to zero after 4 clock cycles
+              );
 
 input        clk, reset, load, ready;
 output       enout;

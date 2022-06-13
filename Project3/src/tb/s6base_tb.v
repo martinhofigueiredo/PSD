@@ -127,7 +127,7 @@ begin
   
   #2
   // Generate the 100 MHz clock:
-  forever #(CLOCK_PERIOD/2) clk100M = ~clk100M;
+  forever (CLOCK_PERIOD/2) clk100M = ~clk100M;
 end		
 
 // generate the reset signal (note this is active low)

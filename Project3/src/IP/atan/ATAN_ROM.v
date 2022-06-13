@@ -39,7 +39,8 @@ module ATAN_ROM(
 			   );
 		
 parameter ROMSIZE = 32;
-parameter ATANLUT_FILENAME = "../simdata/atanLUTd.hex";	
+parameter ATANLUT_FILENAME = "../../simdata/ataLUT.hex";	//degree
+// parameter ATANLUT_FILENAME = "../../simdata/atanLUT.hex"; rad	
 
 reg [31:0] atanLUT[ 0 : ROMSIZE-1 ];	
 initial
@@ -50,4 +51,4 @@ end
 assign data = atanLUT[ addr ];  
 			
 endmodule	
-// end of module ATAN_ROM		   
+// end of module ATAN_ROM		   Project3/src/IP/atan/ATAN_ROM.v
