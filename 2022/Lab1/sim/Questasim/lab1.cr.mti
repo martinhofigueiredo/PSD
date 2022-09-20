@@ -1,0 +1,36 @@
+C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/lab1_tb.v {1 {vlog -work work -vopt -stats=none {C:\usr\jca\FEUP\FEUP\Aulas\2021-2022\ProjetoSistemasDigitais\AulasPL\T1\src\verilog\testbench\lab1_tb.v}
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module lab1_tb
+
+Top level modules:
+	lab1_tb
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/toupper.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/toupper.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module toupper
+
+Top level modules:
+	toupper
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/uart.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/uart.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module uart
+
+Top level modules:
+	uart
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/lab1.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/rtl/lab1.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module lab1
+
+Top level modules:
+	lab1
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/sim_uart.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2021-2022/ProjetoSistemasDigitais/AulasPL/T1/src/verilog/testbench/sim_uart.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module sim_uart
+
+Top level modules:
+	sim_uart
+
+} {} {}}
