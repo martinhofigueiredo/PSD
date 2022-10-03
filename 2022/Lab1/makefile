@@ -1,6 +1,6 @@
 default:
 	make compile
-	make simultate
+	make simulate
 
 clean:
 	rm sim/iverilog/lab1.out

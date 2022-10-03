@@ -6,18 +6,15 @@
         {
             "label": "Compile with Iverilog",
             "type": "shell",
-            "command": "cd Project3 && make compile",
+            "command": "cd 2022/Lab1 && make compile",
             "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "dependsOn": "Make list of files"
         },
         {
             "label": "Make list of files",
             "type": "shell",
-            "command": "cd Project3 && make list",
+            "command": "cd 2022/Lab1 && make list",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -27,18 +24,18 @@
         {
             "label": "Simulate",
             "type": "shell",
-            "command": "cd Project3 && make simulate",
+            "command": "cd 2022/Lab1 && make simulate",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
             },
             "dependsOn": "Compile with Iverilog"
         },
         {
             "label": "View Results in gtkwave",
             "type": "shell",
-            "command": "gtkwave Project3/sim/vpp/simulationdata.vcd",
+            "command": "gtkwave 2022/Lab1/sim/vpp/simulationdata.vcd",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
