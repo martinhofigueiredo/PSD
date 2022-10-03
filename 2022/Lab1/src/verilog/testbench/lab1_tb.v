@@ -142,12 +142,12 @@ begin
  SendData( "f" ); //
  #200_000
  SendData( "," ); //
- SendData( "5" ); //
+ SendData( "a" ); //
  SendData( "E" ); //
  SendData( "D" ); //
  SendData( "." ); //
  #500_000
- $stop; 
+ $finish; 
  
 end
 
@@ -187,11 +187,14 @@ begin
  
  @(posedge clock)
    #1 send_data = 1; // start transmission
-   
+ 
+ @( posedge data_transmitted_ready ); // wait for the end of transmission
+
+ //only after knowing the transmission is over do we turn off the send data flag
+
  @(posedge clock)
    #1 send_data = 0; // keep send_data active for one clock cycle
 
- @( posedge data_transmitted_ready ); // wait for the end of transmission
  
 end
 endtask

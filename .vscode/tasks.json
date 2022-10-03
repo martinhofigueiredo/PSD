@@ -9,17 +9,6 @@
             "command": "cd 2022/Lab1 && make compile",
             "problemMatcher": [],
             "group": "build",
-            "dependsOn": "Make list of files"
-        },
-        {
-            "label": "Make list of files",
-            "type": "shell",
-            "command": "cd 2022/Lab1 && make list",
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
         },
         {
             "label": "Simulate",
