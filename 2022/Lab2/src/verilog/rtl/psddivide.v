@@ -1,7 +1,7 @@
 //-------------------------------------------------------------------------------
 //  FEUP / M.EEC - Digital Systems Design 2022/2023
 //
-// ADD YOUR NAMES HERE
+// Martinho Figueiredo e Pedro Cruz
 //-------------------------------------------------------------------------------
 
 module psddivide(
@@ -15,7 +15,12 @@ module psddivide(
 					output [31:0] rest			//rest
 				);
 
+reg [63:0] rdiv;
+reg [31:0] rdivisor;
+reg [31:0] prest;
 
-// ADD YOUR CODE HERE
+assign rdiv [63:31] = start ? {32'd0,dividend [31]} : (prest [32] ? (rdiv [62:30]):({prest [31:0],rdiv [30]}));
+assign rdiv [30:0] = start ? dividend [30:0] : {rdiv [29:0],~ prest [32]};
 
+//assign prest =  rdiv[63:32] - {1'b0,rdivisor};
 endmodule
