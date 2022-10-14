@@ -59,8 +59,13 @@ begin
   stop  = 1'b0;
   
   forever
-    # (CLOCK_PERIOD / 2 ) clock = ~clock;
+    #(CLOCK_PERIOD / 2 ) clock = ~clock;
 end
+initial
+begin
+  $dumpfile("mysimdata.vcd");
+  $dumpvars(0, psddivide_tb );
+end			 
 
 //---------------------------------------------------
 // Apply the initial reset for 1.5 clock cycles:
