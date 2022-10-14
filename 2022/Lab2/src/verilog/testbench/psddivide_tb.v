@@ -11,7 +11,7 @@ Lab 1 - Design and verification of a sequential non-restoring divider
 	jca@fe.up.pt, Oct 2017 - 2022
 	
 */
-`timescale 1ns / 1ns;
+`timescale 1ns / 1ns
 
 module psddivide_tb;
  
@@ -122,6 +122,7 @@ begin
   
   // Print the results:
   $display("%d / %d : quotient=%d,  rest=%d", dividend, divisor, quotient, rest );
+  $finish;
   end  
 endtask
 

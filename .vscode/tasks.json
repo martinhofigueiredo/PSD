@@ -6,14 +6,14 @@
         {
             "label": "Compile with Iverilog",
             "type": "shell",
-            "command": "cd 2022/Lab1 && make compile",
+            "command": "cd 2022/Lab2 && make compile",
             "problemMatcher": [],
-            "group": "build",
+            "group": "build"
         },
         {
             "label": "Simulate",
             "type": "shell",
-            "command": "cd 2022/Lab1 && make simulate",
+            "command": "cd 2022/Lab2 && make simulate",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -24,7 +24,7 @@
         {
             "label": "View Results in gtkwave",
             "type": "shell",
-            "command": "gtkwave 2022/Lab1/sim/vpp/simulationdata.vcd",
+            "command": "gtkwave 2022/Lab2/sim/vpp/simulationdata.vcd",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
