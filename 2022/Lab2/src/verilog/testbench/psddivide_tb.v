@@ -18,22 +18,31 @@ module psddivide_tb;
 // general parameters 
 parameter CLOCK_PERIOD = 10;              // Clock period in ns
 parameter MAX_SIM_TIME = 100_000_000_000;     // Set the maximum simulation time (time units=ns)
-
+parameter NBITS = 32;
   
 // Registers for driving the inputs:
 reg  clock, reset;
-reg  start, stop;
-reg  [31:0] dividend, divisor;
+wire  start, stop, busy;
+reg  start1, stop1;
+reg  run;
+reg  [NBITS-1:0] dividend, divisor;
 
 // Wires to connect to the outputs:
-wire [31:0] quotient, rest;
+wire [NBITS-1:0] quotient, rest;
 
-/*psddividefsm psddividefsm_1
+psddividefsm #(.NBITS(NBITS)) psddividefsm_1
       (
+        .clock(clock),
+        .reset(reset),
+        .run(run),
+        .busy(busy),
+        .start(start),
+        .stop(stop)
+      );
 
-      )*/
+
 // Instantiate the module under verification:
-psddivide psddivide_1
+psddivide #(.NBITS(NBITS)) psddivide_1
       ( 
 	    .clock(clock), // master clock, active in the positive edge
         .reset(reset), // master reset, synchronous and active high
@@ -58,8 +67,8 @@ begin
   reset = 1'b0;
   dividend = 32'd0;
   divisor  = 32'd0;
-  start = 1'b0;
-  stop  = 1'b0;
+  start1 = 1'b0;
+  stop1  = 1'b0;
   
   forever
     #(CLOCK_PERIOD / 2 ) clock = ~clock;
@@ -67,7 +76,7 @@ end
 initial
 begin
   $dumpfile("mysimdata.vcd");
-  $dumpvars(0, psddivide_1);
+  $dumpvars(0, psddivide_tb);
 end			 
 
 //---------------------------------------------------
@@ -94,38 +103,46 @@ initial
 begin
   
   #( 10*CLOCK_PERIOD );
-  
   // Example of calling task 'execdivide' (see below):
+  // Possible Cases (no negative numbers):
   execdivide( 123456, 789 );
   #( 10*CLOCK_PERIOD)
-  execdivide( 500, 4);
+  // A > B com resto
+  execdivide( 21, 4);
   #( 10*CLOCK_PERIOD)
-  execdivide( 1, 4);
-  #( 10*CLOCK_PERIOD );
+  // A > B sem resto
+  execdivide( 20, 4);
+  #( 10*CLOCK_PERIOD)
+  // A < B com resto
+  execdivide( 1, 3);
+  #( 10*CLOCK_PERIOD)
+  // A < B sem resto
+  execdivide( 1, 2);
+  #( 10*CLOCK_PERIOD)
   $finish;  
 end
 
 
 // Execute a division:
 task execdivide;
-input [31:0] divdn, divdr;
+input [NBITS-1:0] divdn, divdr;
 begin
   dividend = divdn;   // Apply operands
   divisor = divdr;
   
   @(negedge clock);   // wait for the next negative edge of the clock
-  start = 1'b1;       // Assert start
+  start1 = 1'b1;       // Assert start
   
   @(negedge clock );
-  start = 1'b0;  
+  start1 = 1'b0;  
   
-  repeat (32) @(posedge clock);  // Repeat 32 times: wait for the next positive edge of the clock
-  
-  @(negedge clock);
-  stop = 1'b1;        // Assert stop
+  repeat (NBITS) @(posedge clock);  // Repeat 32 times: wait for the next positive edge of the clock
   
   @(negedge clock);
-  stop = 1'b0;
+  stop1 = 1'b1;        // Assert stop
+  
+  @(negedge clock);
+  stop1 = 1'b0;
   
   @(negedge clock);
   

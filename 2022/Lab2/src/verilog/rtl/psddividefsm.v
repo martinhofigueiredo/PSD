@@ -83,14 +83,15 @@ Meaning this controller should run for 1(activation)+NBITS+2(flush result) cycle
 
 */
 
-module moduleName (
+module psddividefsm #(parameter NBITS=32) 
+    (
     input clock,
     input reset,
     input run,
     output reg busy,
     output reg start,
     output reg stop
-);
+    );
 parameter IDLE  = 0;
 parameter WORK  = 1;
 parameter DONE  = 2;

@@ -27,9 +27,10 @@ reg [NBITS-1:0] rdivisor; // 31:0 -> 32 bits
 wire [NBITS:0] prest; //
 wire [NBITS:0] loadleft;
 wire [NBITS-2:0] loadright;
+parameter [NBITS-1:0] ZERO = 0;
 
 assign prest[NBITS:0] = rdiv[2*NBITS-1:NBITS-1]  - {1'b0,rdivisor[NBITS-1:0]};
-assign loadleft[NBITS:0] = start ? {32'd0,dividend[NBITS-1]} : (prest[NBITS] ? rdiv[2*NBITS-2:NBITS-2] : {prest[NBITS-1:0],rdiv[NBITS-2]}) ;
+assign loadleft[NBITS:0] = start ? {ZERO[NBITS-1:0],dividend[NBITS-1]} : (prest[NBITS] ? rdiv[2*NBITS-2:NBITS-2] : {prest[NBITS-1:0],rdiv[NBITS-2]}) ;
 assign loadright[NBITS-2:0] = start ? (dividend[NBITS-2:0]) : ({rdiv[NBITS-3:0], ~ prest[NBITS]});
 
 always @(posedge clock or posedge reset) begin
