@@ -64,7 +64,7 @@ end
 initial
 begin
   $dumpfile("mysimdata.vcd");
-  $dumpvars(0, psddivide_tb );
+  $dumpvars(0, psddivide );
 end			 
 
 //---------------------------------------------------
