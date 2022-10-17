@@ -42,14 +42,14 @@ module psddivide #(parameter NBITS = 32)
 					output reg [NBITS-1:0] rest			//rest
 				);
 
-reg [2*NBITS-1:0] rdiv;
-reg [NBITS-1:0] rdivisor;
-wire [NBITS-1:0] prest;
+reg [2*NBITS-1:0] rdiv; // Se NBITS = 32 entao [63:0] -> 64 bits totais
+reg [NBITS-1:0] rdivisor; // 31:0 -> 32 bits
+wire [NBITS-1:0] prest; //
 wire [NBITS:0] loadleft;
 wire [NBITS-2:0] loadright;
 
-assign prest[NBITS-1:0] = rdiv[2*NBITS-1:NBITS-1]  - {1'b0,rdivisor};
-assign loadleft[NBITS:0] = start ? {32'd0,dividend[NBITS]} : (prest[NBITS] ? rdiv[2*NBITS-2:NBITS-2] : {prest[NBITS-1:0],rdiv[NBITS-2]}) ;
+assign prest[NBITS-1:0] = rdiv[2*NBITS-1:NBITS-1]  - {1'b0,rdivisor[NBITS-1:0]};
+assign loadleft[NBITS:0] = start ? {32'd0,dividend[NBITS-1]} : (prest[NBITS] ? rdiv[2*NBITS-2:NBITS-2] : {prest[NBITS-1:0],rdiv[NBITS-2]}) ;
 assign loadright[NBITS-2:0] = start ? dividend[NBITS-2:0] : {rdiv[NBITS-3:0],~prest[NBITS]};
 
 always @(posedge clock or posedge reset) begin
@@ -60,11 +60,11 @@ always @(posedge clock or posedge reset) begin
 	  rdivisor <= 0;
 	end
 	else begin
-		rdivisor <= start ? divisor[NBITS-1:0] : 0; 
+		rdivisor <= start ? divisor[NBITS-1:0] : rdivisor; 
 		rdiv[NBITS-2:0] <= loadright[NBITS-2:0];
 		rdiv[2*NBITS-1:NBITS-1] <= loadleft[NBITS:0];
-		rest <= stop ? rdiv[2*NBITS-1:NBITS-1] : 0;
-		quotient <= stop ? rdiv[NBITS-1:0] : 0;
+		rest <= stop ? rdiv[2*NBITS-1:NBITS-1] : rest;
+		quotient <= stop ? rdiv[NBITS-1:0] : quotient;
 	end
 end
 endmodule
