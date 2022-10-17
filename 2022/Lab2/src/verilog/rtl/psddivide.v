@@ -4,32 +4,12 @@
 // Martinho Figueiredo e Pedro Cruz
 //-------------------------------------------------------------------------------
 
+/*TODO :
+- [ X ] Implementaçao
+- [ X ] Verificaçao
+- [ X ] Parametrizaçao
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 module psddivide #(parameter NBITS = 32)
 				(
 					input         clock,		//master clock
@@ -44,13 +24,13 @@ module psddivide #(parameter NBITS = 32)
 
 reg [2*NBITS-1:0] rdiv; // Se NBITS = 32 entao [63:0] -> 64 bits totais
 reg [NBITS-1:0] rdivisor; // 31:0 -> 32 bits
-wire [NBITS-1:0] prest; //
+wire [NBITS:0] prest; //
 wire [NBITS:0] loadleft;
 wire [NBITS-2:0] loadright;
 
-assign prest[NBITS-1:0] = rdiv[2*NBITS-1:NBITS-1]  - {1'b0,rdivisor[NBITS-1:0]};
+assign prest[NBITS:0] = rdiv[2*NBITS-1:NBITS-1]  - {1'b0,rdivisor[NBITS-1:0]};
 assign loadleft[NBITS:0] = start ? {32'd0,dividend[NBITS-1]} : (prest[NBITS] ? rdiv[2*NBITS-2:NBITS-2] : {prest[NBITS-1:0],rdiv[NBITS-2]}) ;
-assign loadright[NBITS-2:0] = start ? dividend[NBITS-2:0] : {rdiv[NBITS-3:0],~prest[NBITS]};
+assign loadright[NBITS-2:0] = start ? (dividend[NBITS-2:0]) : ({rdiv[NBITS-3:0], ~ prest[NBITS]});
 
 always @(posedge clock or posedge reset) begin
 	if (reset) begin

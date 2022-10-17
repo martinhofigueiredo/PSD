@@ -17,7 +17,7 @@ module psddivide_tb;
  
 // general parameters 
 parameter CLOCK_PERIOD = 10;              // Clock period in ns
-parameter MAX_SIM_TIME = 100_000_000;     // Set the maximum simulation time (time units=ns)
+parameter MAX_SIM_TIME = 100_000_000_000;     // Set the maximum simulation time (time units=ns)
 
   
 // Registers for driving the inputs:
@@ -28,7 +28,10 @@ reg  [31:0] dividend, divisor;
 // Wires to connect to the outputs:
 wire [31:0] quotient, rest;
 
+/*psddividefsm psddividefsm_1
+      (
 
+      )*/
 // Instantiate the module under verification:
 psddivide psddivide_1
       ( 
@@ -94,11 +97,12 @@ begin
   
   // Example of calling task 'execdivide' (see below):
   execdivide( 123456, 789 );
-  
-  // COMPLETE WITH MORE TESTS...
-  
+  #( 10*CLOCK_PERIOD)
+  execdivide( 500, 4);
+  #( 10*CLOCK_PERIOD)
+  execdivide( 1, 4);
   #( 10*CLOCK_PERIOD );
-  $stop;  
+  $finish;  
 end
 
 
@@ -126,8 +130,7 @@ begin
   @(negedge clock);
   
   // Print the results:
-  $display("%d / %d : quotient=%d,  rest=%d", dividend, divisor, quotient, rest );
-  $finish;
+  $display("Test Case: %d/%d :    quotient=%f,          rest=%f\n                                            CQ=%f,            CR=%f\n                                     abs(Q-CQ)=%f        abs(R-CR)=%f", dividend, divisor, quotient, rest , dividend/divisor, dividend%divisor, (dividend/divisor)-quotient, ((dividend%divisor)-rest)*0.01);
   end  
 endtask
 
