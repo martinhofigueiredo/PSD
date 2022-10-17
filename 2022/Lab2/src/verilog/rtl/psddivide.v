@@ -4,6 +4,32 @@
 // Martinho Figueiredo e Pedro Cruz
 //-------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module psddivide #(parameter NBITS = 32)
 				(
 					input         clock,		//master clock
@@ -12,7 +38,7 @@ module psddivide #(parameter NBITS = 32)
 					input         stop,			//load output registers
 					input  [NBITS-1:0] dividend,		// dividend
 					input  [NBITS-1:0] divisor,		// divisor
-					output reg [NBITS-1:0] quotient,		// quotient
+					output reg [NBITS-1:0] quotient,		// quotient register with implicit assign 
 					output reg [NBITS-1:0] rest			//rest
 				);
 
