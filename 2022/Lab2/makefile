@@ -10,6 +10,3 @@ compile:
 
 simulate:
 	vvp sim/iverilog/lab1.out
-
-deliverable:
-	cp src/verilog/rtl/psddivide.v src/verilog/rtl/psddividefsm.v
