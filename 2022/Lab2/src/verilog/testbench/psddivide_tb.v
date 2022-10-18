@@ -22,7 +22,7 @@ parameter NBITS = 32;
   
 // Registers for driving the inputs:
 reg  clock, reset;
-//wire  start, stop, busy;
+//wire  start, stop, busy; //testing for FSM
 reg  start, stop;
 reg  run;
 reg  [NBITS-1:0] dividend, divisor;
@@ -132,7 +132,10 @@ begin
   @(negedge clock);
   
   // Print the results:
-  $display("Test Case: %d/%d :    quotient=%f,          rest=%f\n                                            CQ=%f,            CR=%f\n                                     abs(Q-CQ)=%f        abs(R-CR)=%f", dividend, divisor, quotient, rest , dividend/divisor, dividend%divisor, (dividend/divisor)-quotient, ((dividend%divisor)-rest)*0.01);
+  $display("Test Case: %d/%d :    quotient=%f,          rest=%f\n", dividend, divisor, quotient, rest*0.001  );
+  $display("                                            CQ=%f,            CR=%f\n",dividend/divisor, dividend%divisor*0.001);
+  $display("                                     abs(Q-CQ)=%f        abs(R-CR)=%f\n", ((dividend/divisor)>quotient)?((dividend/divisor)-quotient)*0.001:(quotient-(dividend/divisor))*0.001, ((dividend%divisor)>rest)?((dividend%divisor)-rest)*0.001:(rest-(dividend%divisor))*0.001);  
+  $display("Error Percentage: %f \%", (1-(dividend/divisor + dividend%divisor*0.001)/(quotient+rest*0.001))*100 );
   end  
 endtask
 

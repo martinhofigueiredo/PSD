@@ -99,41 +99,41 @@ parameter RESET = 3;
 
 reg [1:0] state = IDLE; // this register save which state we are on
 
-always @(posedge clock) // State Machine triggers every clock and RE reset pulse
-    case(state)
-        default: begin//IDLE
-            busy <= 0;
-            start <= 0;
-            stop <= 0;
-        end
-        WORK:begin
-            busy <= 1;
-            start <= 0;
-            stop <= 0;
-        end
-        DONE:begin
-            busy <= 0;
-            start <= 0;
-            stop <= 1;
-        end
-        RESET:begin
-            state <= IDLE;
-            busy <= 0;
-            start <= 0;
-            stop <= 0;
-        end
-    endcase
-
-always @(posedge reset) begin
-    state <= IDLE;
-    busy <= 0;
-    start <= 0;
-    stop <= 0;
-end
-    
-always @(posedge run) begin
-    start <= 1;
-    state <= WORK;
-end
+always @(posedge clock or posedge reset or posedge run) // State Machine triggers every clock and RE reset pulse
+    if (reset) begin
+        state <= IDLE;
+        busy <= 0;
+        start <= 0;
+        stop <= 0;
+    end 
+    else if (run) begin
+        start <= 1;
+        state <= WORK;
+    end
+    else begin
+        case(state)
+            default: begin//IDLE
+                busy <= 0;
+                start <= 0;
+                stop <= 0;
+            end
+            WORK:begin
+                busy <= 1;
+                start <= 0;
+                stop <= 0;
+            end
+            DONE:begin
+                busy <= 0;
+                start <= 0;
+                stop <= 1;
+            end
+            RESET:begin
+                state <= IDLE;
+                busy <= 0;
+                start <= 0;
+                stop <= 0;
+            end
+        endcase
+    end
 
 endmodule
