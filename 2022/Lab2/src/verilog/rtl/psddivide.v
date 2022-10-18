@@ -35,24 +35,25 @@ assign prest[NBITS:0] = rdiv[2*NBITS-1:NBITS-1]  - {1'b0,rdivisor[NBITS-1:0]};
 
 //Load left is two stacked multiplexeres so we choose to stack to ternary operatores that have their selector as start and prest.
 //This means that in the begining while start is 1 we should load just the first bit of the dividend onto the left side. 
-//After this the prest selector takes over and sees whether the subtraction came to zero or one 
+//After this the prest selector takes over and sees whether the subtraction came to zero or one and selects the corresponding input
 assign loadleft[NBITS:0] = start ? {ZERO[NBITS-1:0],dividend[NBITS-1]} : (prest[NBITS] ? rdiv[2*NBITS-2:NBITS-2] : {prest[NBITS-1:0],rdiv[NBITS-2]}) ;
 
+//Loads the righ side of the register with a new number from divindend when start is 1 else shifts the byes and adds the prest calculated value 
 assign loadright[NBITS-2:0] = start ? (dividend[NBITS-2:0]) : ({rdiv[NBITS-3:0], ~ prest[NBITS]});
 
-always @(posedge clock or posedge reset) begin
-	if (reset) begin
+always @(posedge clock ) begin //syncronous only with the clock 
+	if (reset) begin //if reset is 1 on the RE of clock then we will clear every register by loading 0 on it 
 	  rdiv <= 0;
 	  quotient <=0;
 	  rest <= 0;
 	  rdivisor <= 0;
 	end
 	else begin
-		rdivisor <= start ? divisor[NBITS-1:0] : rdivisor; 
-		rdiv[NBITS-2:0] <= loadright[NBITS-2:0];
-		rdiv[2*NBITS-1:NBITS-1] <= loadleft[NBITS:0];
-		rest <= stop ? rdiv[2*NBITS-1:NBITS-1] : rest;
-		quotient <= stop ? rdiv[NBITS-1:0] : quotient;
+		rdivisor <= start ? divisor[NBITS-1:0] : rdivisor; //when is start is 1 it loads a new divisor else divisor stays the same
+		rdiv[NBITS-2:0] <= loadright[NBITS-2:0]; // loads the right half of the rdiv register
+		rdiv[2*NBITS-1:NBITS-1] <= loadleft[NBITS:0]; // loads the right half of the rdiv register
+		rest <= stop ? rdiv[2*NBITS-1:NBITS-1] : rest; // if stop is 1 loads the output rest register with the anwser else stays the same  
+		quotient <= stop ? rdiv[NBITS-1:0] : quotient; // if stop is 1 loads the output quotient register with the anwser else stays the same
 	end
 end
 endmodule
