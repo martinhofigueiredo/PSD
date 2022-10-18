@@ -9,7 +9,9 @@ Lab 1 - Design and verification of a sequential non-restoring divider
 	and Computer Engineering requires explicit authorization from the author.
 	
 	jca@fe.up.pt, Oct 2017 - 2022
-	
+
+  Modified by Martinho Figueiredo e José Pedro Cruz
+
 */
 `timescale 1ns / 1ns
 
@@ -22,15 +24,17 @@ parameter NBITS = 32;
   
 // Registers for driving the inputs:
 reg  clock, reset;
-//wire  start, stop, busy; //testing for FSM
-reg  start, stop;
-reg  run;
+wire  start, stop, busy; // Wires for connecting fsm to divider
+
+reg  run; // run flag
 reg  [NBITS-1:0] dividend, divisor;
 
 // Wires to connect to the outputs:
 wire [NBITS-1:0] quotient, rest;
 
-/*psddividefsm #(.NBITS(NBITS)) psddividefsm_1
+
+//Instanciate State Machine
+psddividefsm #(.NBITS(NBITS)) psddividefsm_1 
       (
         .clock(clock),
         .reset(reset),
@@ -39,7 +43,7 @@ wire [NBITS-1:0] quotient, rest;
         .start(start),
         .stop(stop)
       );
-*/
+
 
 // Instantiate the module under verification:
 psddivide #(.NBITS(NBITS)) psddivide_1
@@ -64,8 +68,6 @@ begin
   reset = 1'b0;
   dividend = 32'd0;
   divisor  = 32'd0;
-  start = 1'b0;
-  stop  = 1'b0;
   
   forever
     #(CLOCK_PERIOD / 2 ) clock = ~clock;
@@ -98,7 +100,7 @@ end
 // Example of a simple verification program
 initial
 begin
-  
+  $display("CQ is calculated by the simulator, quotient is from the divider circuit, \nand the same naming scheme for the rest");
   #( 10*CLOCK_PERIOD );
   // Example of calling task 'execdivide' (see below):
   // Possible Cases (no negative numbers):
@@ -114,27 +116,18 @@ input [NBITS-1:0] divdn, divdr;
 begin
   dividend = divdn;   // Apply operands
   divisor = divdr;
-  
+
   @(negedge clock);   // wait for the next negative edge of the clock
-  start = 1'b1;       // Assert start
-  
+  run = 1'b1;       // Assert run
   @(negedge clock );
-  start = 1'b0;  
+  run = 1'b0;  
   
-  repeat (NBITS) @(posedge clock);  // Repeat 32 times: wait for the next positive edge of the clock
-  
-  @(negedge clock);
-  stop = 1'b1;        // Assert stop
-  
-  @(negedge clock);
-  stop = 1'b0;
-  
-  @(negedge clock);
-  
+  #((NBITS+2) * CLOCK_PERIOD); // Wait nbits for the division 2 cycles to load the output 
+
   // Print the results:
-  $display("Test Case: %d/%d :    quotient=%f,          rest=%f\n", dividend, divisor, quotient, rest*0.001  );
-  $display("                                            CQ=%f,            CR=%f\n",dividend/divisor, dividend%divisor*0.001);
-  $display("                                     abs(Q-CQ)=%f        abs(R-CR)=%f\n", ((dividend/divisor)>quotient)?((dividend/divisor)-quotient)*0.001:(quotient-(dividend/divisor))*0.001, ((dividend%divisor)>rest)?((dividend%divisor)-rest)*0.001:(rest-(dividend%divisor))*0.001);  
+  $display("Test Case: %d/%d :    quotient(Q)=%f,          rest(R)=%f", dividend, divisor, quotient, rest*0.001  );
+  $display("                                               CQ=%f,            CR=%f",dividend/divisor, dividend%divisor*0.001);
+  $display("                                        abs(Q-CQ)=%f        abs(R-CR)=%f", ((dividend/divisor)>quotient)?((dividend/divisor)-quotient)*0.001:(quotient-(dividend/divisor))*0.001, ((dividend%divisor)>rest)?((dividend%divisor)-rest)*0.001:(rest-(dividend%divisor))*0.001);  
   $display("Error Percentage: %f \%", (1-(dividend/divisor + dividend%divisor*0.001)/(quotient+rest*0.001))*100 );
   end  
 endtask

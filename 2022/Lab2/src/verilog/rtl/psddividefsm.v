@@ -98,7 +98,7 @@ parameter DONE  = 2;
 parameter RESET = 3;
 parameter CYCLE = NBITS;
 reg [1:0] state = IDLE; // this register save which state we are on
-reg [8:0] counter; // EXAGERO MAS TRYING STUFF
+reg [8:0] counter; // Should go up to 256bit but should be log2(NBITS) 
 
 always @(posedge clock) // State Machine triggers every clock and RE reset pulse
     if (reset) begin
@@ -113,8 +113,14 @@ always @(posedge clock) // State Machine triggers every clock and RE reset pulse
         state <= WORK;
     end
     else if (counter == 0) begin
-        stop <= 1 ;
-        state <= DONE;
+        if (state == WORK) begin
+            stop <= 1;
+            state <= DONE;
+        end else if (state == DONE) begin
+            stop <= 0;
+            state <= IDLE;
+            counter <= NBITS;
+        end
     end
     else begin
         case(state)
@@ -133,12 +139,14 @@ always @(posedge clock) // State Machine triggers every clock and RE reset pulse
                 busy <= 0;
                 start <= 0;
                 stop <= 1;
+                counter <= counter - 1;
             end
             RESET:begin
                 state <= IDLE;
                 busy <= 0;
                 start <= 0;
                 stop <= 0;
+                counter <= NBITS;
             end
         endcase
     end
