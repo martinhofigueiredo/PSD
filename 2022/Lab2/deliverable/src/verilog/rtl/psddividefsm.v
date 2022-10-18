@@ -1,5 +1,3 @@
-// Martinho Figueiredo E Pedro Cruz
-
 /* Finite State Machine to Control the divider
 # TIMING DIAGRAM
                                             1     2     3     4    33    34    35    
