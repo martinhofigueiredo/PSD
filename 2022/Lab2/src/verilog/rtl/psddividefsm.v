@@ -96,19 +96,25 @@ parameter IDLE  = 0;
 parameter WORK  = 1;
 parameter DONE  = 2;
 parameter RESET = 3;
-
+parameter CYCLE = NBITS;
 reg [1:0] state = IDLE; // this register save which state we are on
+reg [8:0] counter; // EXAGERO MAS TRYING STUFF
 
-always @(posedge clock or posedge reset or posedge run) // State Machine triggers every clock and RE reset pulse
+always @(posedge clock) // State Machine triggers every clock and RE reset pulse
     if (reset) begin
         state <= IDLE;
         busy <= 0;
         start <= 0;
         stop <= 0;
+        counter <= NBITS; // Counter tem sempre o numero de cicl
     end 
     else if (run) begin
         start <= 1;
         state <= WORK;
+    end
+    else if (counter == 0) begin
+        stop <= 1 ;
+        state <= DONE;
     end
     else begin
         case(state)
@@ -121,6 +127,7 @@ always @(posedge clock or posedge reset or posedge run) // State Machine trigger
                 busy <= 1;
                 start <= 0;
                 stop <= 0;
+                counter <= counter - 1;
             end
             DONE:begin
                 busy <= 0;
