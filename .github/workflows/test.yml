@@ -18,8 +18,4 @@ jobs:
       run: sudo apt-get install iverilog
       
     - name: Make List
-      run: cd Project3 && make list
-      
-    - name: Make Module
-      run: cd Project3 && make module
-      
+      run: cd 2022/Lab2 && make   
