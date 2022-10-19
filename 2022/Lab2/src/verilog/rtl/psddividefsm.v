@@ -98,8 +98,8 @@ parameter DONE  = 2;
 parameter RESET = 3;
 parameter CYCLE = NBITS;
 reg [1:0] state = IDLE; // this register save which state we are on
-reg [8:0] counter; // Should go up to 256bit but should be log2(NBITS) 
-
+reg [$clog2(NBITS):0] counter; // Should go up to 256bit but should be log2(NBITS) -> done with $clog
+                               // Dinamically created done 
 always @(posedge clock) // State Machine triggers every clock and RE reset pulse
     if (reset) begin
         state <= IDLE;
