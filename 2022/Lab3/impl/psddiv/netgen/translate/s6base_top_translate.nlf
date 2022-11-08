@@ -1,0 +1,20 @@
+Release 14.6 - netgen P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -insert_glbl true -w -dir netgen/translate
+-ofmt verilog -sim s6base_top.ngd s6base_top_translate.v  
+
+Reading design 's6base_top.ngd' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing Verilog netlist file
+'C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD21
+22-LAB2\impl\psddiv\psddiv\netgen\translate\s6base_top_translate.v' ...
+INFO:NetListWriters:633 - The generated Verilog netlist contains Xilinx SIMPRIM
+   simulation primitives and has to be used with SIMPRIM simulation library for
+   correct compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 4395340 kilobytes

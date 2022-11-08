@@ -1,0 +1,42 @@
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib simprims_ver -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/s6base_tb_isim_par.exe -prj C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/s6base_tb_par.prj work.s6base_tb work.glbl 
+ISim P.68d (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" into library work
+Analyzing Verilog file "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" into library work
+WARNING:HDLCompiler:687 - "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" Line 11: Illegal redeclaration of module <uart_sim>.
+Analyzing Verilog file "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/netgen/par/s6base_top_timesim.v" into library work
+Analyzing Verilog file "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" into library work
+WARNING:HDLCompiler:687 - "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" Line 11: Illegal redeclaration of module <uart_sim>.
+Analyzing Verilog file "C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/s6base_tb.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module sffsrce
+Compiling module X_SFF
+Compiling module X_LUT6(INIT=64'b1111111111111111...
+Compiling module X_IPAD
+Compiling module X_BUF
+Compiling module X_OPAD
+Compiling module X_OBUF
+Compiling module X_INV(LOC="PAD160")
+Compiling module X_CKBUF
+Compiling module mux
+Compiling module X_MUX2
+Compiling module X_SFF(INIT=1'b1)
+Compiling module X_CARRY4
+Compiling module X_ONE
+Compiling module X_LUT5
+Compiling module X_ZERO
+Compiling module ffsrce
+Compiling module X_FF
+Compiling module X_FF(INIT=1'b1)
+Compiling module s6base_top
+Compiling module uart_sim_default
+Compiling module s6base_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 731 Verilog Units
+Built simulation executable C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/s6base_tb_isim_par.exe
+Fuse Memory Usage: 67068 KB
+Fuse CPU Usage: 3187 ms

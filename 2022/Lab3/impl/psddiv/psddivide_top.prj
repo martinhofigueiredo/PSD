@@ -1,0 +1,3 @@
+verilog work "../../../src/verilog-rtl/psddivide_ctrl.v"
+verilog work "../../../src/verilog-rtl/psddivide.v"
+verilog work "../../../src/verilog-rtl/psddivide_top.v"

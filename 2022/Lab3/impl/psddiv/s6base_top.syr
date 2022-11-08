@@ -1,0 +1,1025 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: s6base_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "s6base_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "s6base_top"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : s6base_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide_ctrl.v" into library work
+Parsing module <psddivide_ctrl>.
+Analyzing Verilog file "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide.v" into library work
+Parsing module <psddivide>.
+Analyzing Verilog file "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" into library work
+Parsing module <uart>.
+Analyzing Verilog file "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide_top.v" into library work
+Parsing module <psddivide_top>.
+Analyzing Verilog file "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\ioports.v" into library work
+Parsing module <ioports>.
+Analyzing Verilog file "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" into library work
+Parsing module <s6base_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <s6base_top>.
+
+Elaborating module <uart(INPUT_CLOCK_FREQUENCY=100000000,TX_BAUD_RATE=115200,RX_BAUD_RATE=115200)>.
+WARNING:HDLCompiler:413 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 106: Result of 15-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 149: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 153: Result of 15-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 198: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 202: Result of 15-bit expression is truncated to fit in 14-bit target.
+"C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 257. $display Error: false start bit detected
+"C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v" Line 267. $display Error: Stop bit not detected
+
+Elaborating module <ioports>.
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 144: Assignment to P2out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 145: Assignment to P3out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 150: Assignment to P7out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 152: Assignment to P8out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 153: Assignment to P9out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 154: Assignment to PAout ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 155: Assignment to PBout ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 157: Assignment to PCout ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 158: Assignment to PDout ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" Line 159: Assignment to PEout ignored, since the identifier is never used
+
+Elaborating module <psddivide_top>.
+
+Elaborating module <psddivide>.
+WARNING:HDLCompiler:1127 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide.v" Line 41: Assignment to rdivisor ignored, since the identifier is never used
+
+Elaborating module <psddivide_ctrl>.
+WARNING:HDLCompiler:413 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide_ctrl.v" Line 53: Result of 7-bit expression is truncated to fit in 6-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <s6base_top>.
+    Related source file is "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v".
+WARNING:Xst:647 - Input <btnu> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btnc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw0> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw3> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw4> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw5> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw6> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sw7> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <out2> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <out3> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <out7> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <out8> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <out9> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <outa> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <outb> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <outc> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <outd> of the instance <ioports_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\s6base_top.v" line 121: Output port <oute> of the instance <ioports_1> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <reset>.
+    Found 1-bit register for signal <reset_d>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <s6base_top> synthesized.
+
+Synthesizing Unit <uart>.
+    Related source file is "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\uart.v".
+        INPUT_CLOCK_FREQUENCY = 100000000
+        TX_BAUD_RATE = 115200
+        RX_BAUD_RATE = 115200
+        BAUD_TX_COUNT = 867
+        BAUD_RX_COUNT = 867
+        NBITS_TX_COUNT = 14
+        NBITS_RX_COUNT = 14
+        IDLE = 1'b0
+        CNT10P = 1'b1
+        IDLERX = 1'b0
+        RXDATA = 1'b1
+        IDLETX = 1'b0
+        TXDATA = 1'b1
+    Found 14-bit register for signal <baudrxcount>.
+    Found 4-bit register for signal <bitrxcount>.
+    Found 1-bit register for signal <staterxbc>.
+    Found 14-bit register for signal <baudtxcount>.
+    Found 4-bit register for signal <bittxcount>.
+    Found 1-bit register for signal <statetxbc>.
+    Found 1-bit register for signal <rx1>.
+    Found 1-bit register for signal <rx2>.
+    Found 1-bit register for signal <rx3>.
+    Found 9-bit register for signal <rxdata>.
+    Found 1-bit register for signal <staterx>.
+    Found 8-bit register for signal <dout>.
+    Found 1-bit register for signal <rxready>.
+    Found 9-bit register for signal <txdata>.
+    Found 1-bit register for signal <statetx>.
+    Found 1-bit register for signal <starttxbit>.
+    Found 1-bit register for signal <txready>.
+    Found 1-bit register for signal <tx>.
+    Found 4-bit adder for signal <bitrxcount[3]_GND_2_o_add_11_OUT> created at line 149.
+    Found 14-bit adder for signal <baudrxcount[13]_GND_2_o_add_12_OUT> created at line 153.
+    Found 4-bit adder for signal <bittxcount[3]_GND_2_o_add_24_OUT> created at line 198.
+    Found 14-bit adder for signal <baudtxcount[13]_GND_2_o_add_25_OUT> created at line 202.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  73 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <uart> synthesized.
+
+Synthesizing Unit <ioports>.
+    Related source file is "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\ioports.v".
+        ATLYS_HWID = 32'b00100000001000100011000000000111
+        IDLE = 5'b00000
+        WRITECMD = 5'b00001
+        WRITECMD2 = 5'b00010
+        WRITECMD3 = 5'b00011
+        WRITECMD4 = 5'b00100
+        READCMD = 5'b00101
+        READCMD2 = 5'b00110
+        READCMD3 = 5'b00111
+        READCMD4 = 5'b01000
+        READCMD5 = 5'b01001
+        READCMD6 = 5'b01010
+        READCMD7 = 5'b01011
+        READCMD8 = 5'b01100
+        DELAY0 = 5'b01101
+        DELAY1 = 5'b01110
+        DELAY2 = 5'b01111
+        DELAY3 = 5'b10000
+        RESET = 3'b001
+        WRITE = 3'b010
+        READ = 3'b011
+    Found 32-bit register for signal <out1>.
+    Found 32-bit register for signal <out2>.
+    Found 32-bit register for signal <out3>.
+    Found 32-bit register for signal <out4>.
+    Found 32-bit register for signal <out5>.
+    Found 32-bit register for signal <out6>.
+    Found 32-bit register for signal <out7>.
+    Found 32-bit register for signal <out8>.
+    Found 32-bit register for signal <out9>.
+    Found 32-bit register for signal <outa>.
+    Found 32-bit register for signal <outb>.
+    Found 32-bit register for signal <outc>.
+    Found 32-bit register for signal <outd>.
+    Found 32-bit register for signal <oute>.
+    Found 32-bit register for signal <outf>.
+    Found 1-bit register for signal <enout>.
+    Found 8-bit register for signal <byte3>.
+    Found 8-bit register for signal <byte2>.
+    Found 8-bit register for signal <byte1>.
+    Found 5-bit register for signal <state>.
+    Found 8-bit register for signal <dataout>.
+    Found 4-bit register for signal <address>.
+    Found 32-bit register for signal <datatoout>.
+    Found 32-bit register for signal <out0>.
+INFO:Xst:1799 - State 01111 is never reached in FSM <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 15                                             |
+    | Transitions        | 31                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit 8-to-1 multiplexer for signal <_n0489> created at line 76.
+    Summary:
+	inferred 581 D-type flip-flop(s).
+	inferred 110 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <ioports> synthesized.
+
+Synthesizing Unit <psddivide_top>.
+    Related source file is "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide_top.v".
+    Summary:
+	no macro.
+Unit <psddivide_top> synthesized.
+
+Synthesizing Unit <psddivide>.
+    Related source file is "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide.v".
+    Found 32-bit register for signal <quotient_r>.
+    Found 64-bit register for signal <rdiv>.
+    Found 32-bit register for signal <rest_r>.
+    Found 33-bit subtractor for signal <prest> created at line 75.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 128 D-type flip-flop(s).
+	inferred  34 Multiplexer(s).
+Unit <psddivide> synthesized.
+
+Synthesizing Unit <psddivide_ctrl>.
+    Related source file is "C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide_ctrl.v".
+        IDLE = 0
+        RUN = 1
+    Found 6-bit register for signal <counter>.
+    Found 1-bit register for signal <state>.
+    Found 6-bit adder for signal <counter[5]_GND_6_o_add_3_OUT> created at line 53.
+    Found 6-bit comparator lessequal for signal <n0011> created at line 61
+    Found 6-bit comparator lessequal for signal <n0013> created at line 61
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   7 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <psddivide_ctrl> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 14-bit adder                                          : 2
+ 33-bit subtractor                                     : 1
+ 4-bit adder                                           : 2
+ 6-bit adder                                           : 1
+# Registers                                            : 48
+ 1-bit register                                        : 15
+ 14-bit register                                       : 2
+ 32-bit register                                       : 19
+ 4-bit register                                        : 3
+ 6-bit register                                        : 1
+ 64-bit register                                       : 1
+ 8-bit register                                        : 5
+ 9-bit register                                        : 2
+# Comparators                                          : 2
+ 6-bit comparator lessequal                            : 2
+# Multiplexers                                         : 155
+ 1-bit 2-to-1 multiplexer                              : 42
+ 14-bit 2-to-1 multiplexer                             : 2
+ 31-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 97
+ 32-bit 8-to-1 multiplexer                             : 1
+ 33-bit 2-to-1 multiplexer                             : 1
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 8
+ 9-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <rxdata_0> of sequential type is unconnected in block <uart_1>.
+
+Synthesizing (advanced) Unit <uart>.
+The following registers are absorbed into counter <baudrxcount>: 1 register on signal <baudrxcount>.
+The following registers are absorbed into counter <bitrxcount>: 1 register on signal <bitrxcount>.
+The following registers are absorbed into counter <baudtxcount>: 1 register on signal <baudtxcount>.
+The following registers are absorbed into counter <bittxcount>: 1 register on signal <bittxcount>.
+Unit <uart> synthesized (advanced).
+WARNING:Xst:2677 - Node <rxdata_0> of sequential type is unconnected in block <uart>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 33-bit subtractor                                     : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 4
+ 14-bit up counter                                     : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 754
+ Flip-Flops                                            : 754
+# Comparators                                          : 2
+ 6-bit comparator lessequal                            : 2
+# Multiplexers                                         : 182
+ 1-bit 2-to-1 multiplexer                              : 72
+ 32-bit 2-to-1 multiplexer                             : 97
+ 32-bit 8-to-1 multiplexer                             : 1
+ 33-bit 2-to-1 multiplexer                             : 1
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 8
+ 9-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ioports_1/FSM_0> on signal <state[1:5]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 00000
+ 00001 | 00001
+ 00101 | 00101
+ 00010 | 00010
+ 00011 | 00011
+ 00100 | 00100
+ 10000 | 10000
+ 00110 | 00110
+ 00111 | 00111
+ 01000 | 01000
+ 01001 | 01001
+ 01010 | 01010
+ 01011 | 01011
+ 01100 | 01100
+ 01111 | unreached
+-------------------
+
+Optimizing unit <s6base_top> ...
+
+Optimizing unit <uart> ...
+
+Optimizing unit <ioports> ...
+
+Optimizing unit <psddivide> ...
+
+Optimizing unit <psddivide_ctrl> ...
+WARNING:Xst:2677 - Node <ioports_1/outf_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outf_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/oute_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outd_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outc_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outb_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/outa_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out9_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out8_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out7_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out3_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_31> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_30> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_29> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_28> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_27> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_26> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_25> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_24> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_23> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_22> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_21> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_20> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_19> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_18> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_17> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_16> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_15> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_14> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_13> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_12> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_11> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_10> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_9> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_8> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_7> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_6> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_5> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_4> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_3> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_2> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_1> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:2677 - Node <ioports_1/out2_0> of sequential type is unconnected in block <s6base_top>.
+WARNING:Xst:1710 - FF/Latch <uart_1/baudtxcount_12> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudtxcount_11> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudtxcount_13> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudtxcount_10> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudrxcount_12> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudrxcount_11> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudrxcount_13> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_1/baudrxcount_10> (without init value) has a constant value of 0 in block <s6base_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:3203 - The FF/Latch <uart_1/statetx> in Unit <s6base_top> is the opposite to the following FF/Latch, which will be removed : <uart_1/txready> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block s6base_top, actual ratio is 2.
+FlipFlop ioports_1/state_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop ioports_1/state_FSM_FFd2 has been replicated 2 time(s)
+FlipFlop ioports_1/state_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop ioports_1/state_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop ioports_1/state_FSM_FFd5 has been replicated 2 time(s)
+FlipFlop reset has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 445
+ Flip-Flops                                            : 445
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : s6base_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 628
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 18
+#      LUT2                        : 42
+#      LUT3                        : 60
+#      LUT4                        : 47
+#      LUT5                        : 90
+#      LUT6                        : 258
+#      MUXCY                       : 50
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 53
+# FlipFlops/Latches                : 445
+#      FD                          : 8
+#      FDE                         : 12
+#      FDR                         : 256
+#      FDRE                        : 161
+#      FDSE                        : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 2
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             445  out of  54576     0%  
+ Number of Slice LUTs:                  522  out of  27288     1%  
+    Number used as Logic:               522  out of  27288     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    633
+   Number with an unused Flip Flop:     188  out of    633    29%  
+   Number with an unused LUT:           111  out of    633    17%  
+   Number of fully used LUT-FF pairs:   334  out of    633    52%  
+   Number of unique control sets:        17
+
+IO Utilization: 
+ Number of IOs:                          25
+ Number of bonded IOBs:                  12  out of    218     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clockext100MHz                     | BUFGP                  | 445   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.721ns (Maximum Frequency: 211.820MHz)
+   Minimum input arrival time before clock: 2.688ns
+   Maximum output required time after clock: 3.701ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clockext100MHz'
+  Clock period: 4.721ns (frequency: 211.820MHz)
+  Total number of paths / destination ports: 12716 / 1048
+-------------------------------------------------------------------------
+Delay:               4.721ns (Levels of Logic = 3)
+  Source:            uart_1/baudrxcount_2 (FF)
+  Destination:       uart_1/rxdata_8 (FF)
+  Source Clock:      clockext100MHz rising
+  Destination Clock: clockext100MHz rising
+
+  Data Path: uart_1/baudrxcount_2 to uart_1/rxdata_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.447   0.961  uart_1/baudrxcount_2 (uart_1/baudrxcount_2)
+     LUT5:I0->O            8   0.203   0.803  uart_1/baudrxclock<13>_SW0 (N10)
+     LUT6:I5->O            7   0.205   0.774  uart_1/baudrxclock<13> (uart_1/baudrxclock)
+     LUT3:I2->O            8   0.205   0.802  uart_1/_n0242_inv2 (uart_1/_n0242_inv)
+     FDRE:CE                   0.322          uart_1/rxdata_1
+    ----------------------------------------
+    Total                      4.721ns (1.382ns logic, 3.339ns route)
+                                       (29.3% logic, 70.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clockext100MHz'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              2.688ns (Levels of Logic = 2)
+  Source:            reset_n (PAD)
+  Destination:       reset_d (FF)
+  Destination Clock: clockext100MHz rising
+
+  Data Path: reset_n to reset_d
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  reset_n_IBUF (reset_n_IBUF)
+     INV:I->O              1   0.206   0.579  reset_d_rstpot1_INV_0 (reset_d_rstpot)
+     FD:D                      0.102          reset_d
+    ----------------------------------------
+    Total                      2.688ns (1.530ns logic, 1.158ns route)
+                                       (56.9% logic, 43.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clockext100MHz'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              3.701ns (Levels of Logic = 1)
+  Source:            ioports_1/out0_7 (FF)
+  Destination:       ld7 (PAD)
+  Source Clock:      clockext100MHz rising
+
+  Data Path: ioports_1/out0_7 to ld7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.447   0.683  ioports_1/out0_7 (ioports_1/out0_7)
+     OBUF:I->O                 2.571          ld7_OBUF (ld7)
+    ----------------------------------------
+    Total                      3.701ns (3.018ns logic, 0.683ns route)
+                                       (81.6% logic, 18.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clockext100MHz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clockext100MHz |    4.721|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.68 secs
+ 
+--> 
+
+Total memory usage is 4503836 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  391 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
+

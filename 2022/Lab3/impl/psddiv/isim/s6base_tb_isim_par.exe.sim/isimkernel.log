@@ -1,0 +1,10 @@
+Command line:
+   s6base_tb_isim_par.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50252
+
+Mon Nov 07 16:42:56 2022
+
+
+ Elaboration Time: 0.765625 sec

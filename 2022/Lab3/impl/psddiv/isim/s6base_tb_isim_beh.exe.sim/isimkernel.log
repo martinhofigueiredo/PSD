@@ -1,0 +1,28 @@
+Command line:
+   s6base_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50069
+
+Mon Nov 07 16:31:36 2022
+
+
+ Elaboration Time: 0.25 sec
+
+ Current Memory Usage: 5339.64 Meg
+
+ Total Signals          : 155
+ Total Nets             : 1092
+ Total Signal Drivers   : 87
+ Total Blocks           : 16
+ Total Primitive Blocks : 13
+ Total Processes        : 93
+ Total Traceable Variables  : 175
+ Total Scalar Nets and Variables : 3538
+
+ Total Simulation Time: 36.375 sec
+
+ Current Memory Usage: 5339.64 Meg
+
+Mon Nov 07 16:32:24 2022
+

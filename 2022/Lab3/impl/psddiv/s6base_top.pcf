@@ -1,0 +1,293 @@
+//! **************************************************************************
+// Written by: Map P.68d on Mon Nov 07 16:42:23 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "rx" LOCATE = SITE "A16" LEVEL 1;
+COMP "tx" LOCATE = SITE "B16" LEVEL 1;
+COMP "ld0" LOCATE = SITE "U18" LEVEL 1;
+COMP "ld1" LOCATE = SITE "M14" LEVEL 1;
+COMP "ld2" LOCATE = SITE "N14" LEVEL 1;
+COMP "ld3" LOCATE = SITE "L14" LEVEL 1;
+COMP "ld4" LOCATE = SITE "M13" LEVEL 1;
+COMP "ld5" LOCATE = SITE "D4" LEVEL 1;
+COMP "ld6" LOCATE = SITE "P16" LEVEL 1;
+COMP "ld7" LOCATE = SITE "N12" LEVEL 1;
+COMP "sw0" LOCATE = SITE "A10" LEVEL 1;
+COMP "sw1" LOCATE = SITE "D14" LEVEL 1;
+COMP "sw2" LOCATE = SITE "C14" LEVEL 1;
+COMP "sw3" LOCATE = SITE "P15" LEVEL 1;
+COMP "sw4" LOCATE = SITE "P12" LEVEL 1;
+COMP "sw5" LOCATE = SITE "R5" LEVEL 1;
+COMP "sw6" LOCATE = SITE "T5" LEVEL 1;
+COMP "sw7" LOCATE = SITE "E4" LEVEL 1;
+COMP "btnc" LOCATE = SITE "F5" LEVEL 1;
+COMP "btnd" LOCATE = SITE "P3" LEVEL 1;
+COMP "btnl" LOCATE = SITE "P4" LEVEL 1;
+COMP "btnr" LOCATE = SITE "F6" LEVEL 1;
+COMP "btnu" LOCATE = SITE "N4" LEVEL 1;
+COMP "reset_n" LOCATE = SITE "T15" LEVEL 1;
+COMP "clockext100MHz" LOCATE = SITE "L15" LEVEL 1;
+TIMEGRP clock100M = BEL "reset" BEL "uart_1/bittxcount_3" BEL
+        "uart_1/bittxcount_2" BEL "uart_1/bittxcount_0" BEL
+        "uart_1/bittxcount_1" BEL "uart_1/baudtxcount_9" BEL
+        "uart_1/baudtxcount_6" BEL "uart_1/baudtxcount_3" BEL
+        "uart_1/baudtxcount_2" BEL "uart_1/baudtxcount_1" BEL
+        "uart_1/baudrxcount_9" BEL "uart_1/baudrxcount_6" BEL
+        "uart_1/baudrxcount_3" BEL "uart_1/baudrxcount_1" BEL
+        "uart_1/baudrxcount_2" BEL "uart_1/bitrxcount_3" BEL
+        "uart_1/bitrxcount_2" BEL "uart_1/bitrxcount_0" BEL
+        "uart_1/bitrxcount_1" BEL "uart_1/dout_7" BEL "uart_1/dout_6" BEL
+        "uart_1/dout_5" BEL "uart_1/dout_4" BEL "uart_1/dout_3" BEL
+        "uart_1/dout_2" BEL "uart_1/dout_1" BEL "uart_1/dout_0" BEL
+        "uart_1/txdata_8" BEL "uart_1/txdata_7" BEL "uart_1/txdata_6" BEL
+        "uart_1/txdata_5" BEL "uart_1/txdata_4" BEL "uart_1/txdata_3" BEL
+        "uart_1/txdata_2" BEL "uart_1/txdata_1" BEL "uart_1/txdata_0" BEL
+        "uart_1/rxdata_8" BEL "uart_1/rxdata_7" BEL "uart_1/rxdata_6" BEL
+        "uart_1/rxdata_5" BEL "uart_1/rxdata_4" BEL "uart_1/rxdata_3" BEL
+        "uart_1/rxdata_2" BEL "uart_1/rxdata_1" BEL "uart_1/rx3" BEL
+        "uart_1/rx2" BEL "uart_1/rx1" BEL "ioports_1/state_FSM_FFd2" BEL
+        "ioports_1/state_FSM_FFd3" BEL "ioports_1/state_FSM_FFd1" BEL
+        "ioports_1/state_FSM_FFd4" BEL "ioports_1/state_FSM_FFd5" BEL
+        "ioports_1/dataout_7" BEL "ioports_1/dataout_6" BEL
+        "ioports_1/dataout_5" BEL "ioports_1/dataout_4" BEL
+        "ioports_1/dataout_3" BEL "ioports_1/dataout_2" BEL
+        "ioports_1/dataout_1" BEL "ioports_1/dataout_0" BEL
+        "ioports_1/out0_31" BEL "ioports_1/out0_30" BEL "ioports_1/out0_29"
+        BEL "ioports_1/out0_28" BEL "ioports_1/out0_27" BEL
+        "ioports_1/out0_26" BEL "ioports_1/out0_25" BEL "ioports_1/out0_24"
+        BEL "ioports_1/out0_23" BEL "ioports_1/out0_22" BEL
+        "ioports_1/out0_21" BEL "ioports_1/out0_20" BEL "ioports_1/out0_19"
+        BEL "ioports_1/out0_18" BEL "ioports_1/out0_17" BEL
+        "ioports_1/out0_16" BEL "ioports_1/out0_15" BEL "ioports_1/out0_14"
+        BEL "ioports_1/out0_13" BEL "ioports_1/out0_12" BEL
+        "ioports_1/out0_11" BEL "ioports_1/out0_10" BEL "ioports_1/out0_9" BEL
+        "ioports_1/out0_8" BEL "ioports_1/out0_7" BEL "ioports_1/out0_6" BEL
+        "ioports_1/out0_5" BEL "ioports_1/out0_4" BEL "ioports_1/out0_3" BEL
+        "ioports_1/out0_2" BEL "ioports_1/out0_1" BEL "ioports_1/out0_0" BEL
+        "ioports_1/outf_0" BEL "ioports_1/out6_31" BEL "ioports_1/out6_30" BEL
+        "ioports_1/out6_29" BEL "ioports_1/out6_28" BEL "ioports_1/out6_27"
+        BEL "ioports_1/out6_26" BEL "ioports_1/out6_25" BEL
+        "ioports_1/out6_24" BEL "ioports_1/out6_23" BEL "ioports_1/out6_22"
+        BEL "ioports_1/out6_21" BEL "ioports_1/out6_20" BEL
+        "ioports_1/out6_19" BEL "ioports_1/out6_18" BEL "ioports_1/out6_17"
+        BEL "ioports_1/out6_16" BEL "ioports_1/out6_15" BEL
+        "ioports_1/out6_14" BEL "ioports_1/out6_13" BEL "ioports_1/out6_12"
+        BEL "ioports_1/out6_11" BEL "ioports_1/out6_10" BEL "ioports_1/out6_9"
+        BEL "ioports_1/out6_8" BEL "ioports_1/out6_7" BEL "ioports_1/out6_6"
+        BEL "ioports_1/out6_5" BEL "ioports_1/out6_4" BEL "ioports_1/out6_3"
+        BEL "ioports_1/out6_2" BEL "ioports_1/out6_1" BEL "ioports_1/out6_0"
+        BEL "ioports_1/out5_31" BEL "ioports_1/out5_30" BEL
+        "ioports_1/out5_29" BEL "ioports_1/out5_28" BEL "ioports_1/out5_27"
+        BEL "ioports_1/out5_26" BEL "ioports_1/out5_25" BEL
+        "ioports_1/out5_24" BEL "ioports_1/out5_23" BEL "ioports_1/out5_22"
+        BEL "ioports_1/out5_21" BEL "ioports_1/out5_20" BEL
+        "ioports_1/out5_19" BEL "ioports_1/out5_18" BEL "ioports_1/out5_17"
+        BEL "ioports_1/out5_16" BEL "ioports_1/out5_15" BEL
+        "ioports_1/out5_14" BEL "ioports_1/out5_13" BEL "ioports_1/out5_12"
+        BEL "ioports_1/out5_11" BEL "ioports_1/out5_10" BEL "ioports_1/out5_9"
+        BEL "ioports_1/out5_8" BEL "ioports_1/out5_7" BEL "ioports_1/out5_6"
+        BEL "ioports_1/out5_5" BEL "ioports_1/out5_4" BEL "ioports_1/out5_3"
+        BEL "ioports_1/out5_2" BEL "ioports_1/out5_1" BEL "ioports_1/out5_0"
+        BEL "ioports_1/out4_31" BEL "ioports_1/out4_30" BEL
+        "ioports_1/out4_29" BEL "ioports_1/out4_28" BEL "ioports_1/out4_27"
+        BEL "ioports_1/out4_26" BEL "ioports_1/out4_25" BEL
+        "ioports_1/out4_24" BEL "ioports_1/out4_23" BEL "ioports_1/out4_22"
+        BEL "ioports_1/out4_21" BEL "ioports_1/out4_20" BEL
+        "ioports_1/out4_19" BEL "ioports_1/out4_18" BEL "ioports_1/out4_17"
+        BEL "ioports_1/out4_16" BEL "ioports_1/out4_15" BEL
+        "ioports_1/out4_14" BEL "ioports_1/out4_13" BEL "ioports_1/out4_12"
+        BEL "ioports_1/out4_11" BEL "ioports_1/out4_10" BEL "ioports_1/out4_9"
+        BEL "ioports_1/out4_8" BEL "ioports_1/out4_7" BEL "ioports_1/out4_6"
+        BEL "ioports_1/out4_5" BEL "ioports_1/out4_4" BEL "ioports_1/out4_3"
+        BEL "ioports_1/out4_2" BEL "ioports_1/out4_1" BEL "ioports_1/out4_0"
+        BEL "ioports_1/out1_31" BEL "ioports_1/out1_30" BEL
+        "ioports_1/out1_29" BEL "ioports_1/out1_28" BEL "ioports_1/out1_27"
+        BEL "ioports_1/out1_26" BEL "ioports_1/out1_25" BEL
+        "ioports_1/out1_24" BEL "ioports_1/out1_23" BEL "ioports_1/out1_22"
+        BEL "ioports_1/out1_21" BEL "ioports_1/out1_20" BEL
+        "ioports_1/out1_19" BEL "ioports_1/out1_18" BEL "ioports_1/out1_17"
+        BEL "ioports_1/out1_16" BEL "ioports_1/out1_15" BEL
+        "ioports_1/out1_14" BEL "ioports_1/out1_13" BEL "ioports_1/out1_12"
+        BEL "ioports_1/out1_11" BEL "ioports_1/out1_10" BEL "ioports_1/out1_9"
+        BEL "ioports_1/out1_8" BEL "ioports_1/out1_7" BEL "ioports_1/out1_6"
+        BEL "ioports_1/out1_5" BEL "ioports_1/out1_4" BEL "ioports_1/out1_3"
+        BEL "ioports_1/out1_2" BEL "ioports_1/out1_1" BEL "ioports_1/out1_0"
+        BEL "ioports_1/enout" BEL "ioports_1/datatoout_31" BEL
+        "ioports_1/datatoout_30" BEL "ioports_1/datatoout_29" BEL
+        "ioports_1/datatoout_28" BEL "ioports_1/datatoout_27" BEL
+        "ioports_1/datatoout_26" BEL "ioports_1/datatoout_25" BEL
+        "ioports_1/datatoout_24" BEL "ioports_1/datatoout_23" BEL
+        "ioports_1/datatoout_22" BEL "ioports_1/datatoout_21" BEL
+        "ioports_1/datatoout_20" BEL "ioports_1/datatoout_19" BEL
+        "ioports_1/datatoout_18" BEL "ioports_1/datatoout_17" BEL
+        "ioports_1/datatoout_16" BEL "ioports_1/datatoout_15" BEL
+        "ioports_1/datatoout_14" BEL "ioports_1/datatoout_13" BEL
+        "ioports_1/datatoout_12" BEL "ioports_1/datatoout_11" BEL
+        "ioports_1/datatoout_10" BEL "ioports_1/datatoout_9" BEL
+        "ioports_1/datatoout_8" BEL "ioports_1/datatoout_7" BEL
+        "ioports_1/datatoout_6" BEL "ioports_1/datatoout_5" BEL
+        "ioports_1/datatoout_4" BEL "ioports_1/datatoout_3" BEL
+        "ioports_1/datatoout_2" BEL "ioports_1/datatoout_1" BEL
+        "ioports_1/datatoout_0" BEL "ioports_1/address_3" BEL
+        "ioports_1/address_2" BEL "ioports_1/address_1" BEL
+        "ioports_1/address_0" BEL "ioports_1/byte2_7" BEL "ioports_1/byte2_6"
+        BEL "ioports_1/byte2_5" BEL "ioports_1/byte2_4" BEL
+        "ioports_1/byte2_3" BEL "ioports_1/byte2_2" BEL "ioports_1/byte2_1"
+        BEL "ioports_1/byte2_0" BEL "ioports_1/byte3_7" BEL
+        "ioports_1/byte3_6" BEL "ioports_1/byte3_5" BEL "ioports_1/byte3_4"
+        BEL "ioports_1/byte3_3" BEL "ioports_1/byte3_2" BEL
+        "ioports_1/byte3_1" BEL "ioports_1/byte3_0" BEL "ioports_1/byte1_7"
+        BEL "ioports_1/byte1_6" BEL "ioports_1/byte1_5" BEL
+        "ioports_1/byte1_4" BEL "ioports_1/byte1_3" BEL "ioports_1/byte1_2"
+        BEL "ioports_1/byte1_1" BEL "ioports_1/byte1_0" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_31" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_30" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_29" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_28" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_27" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_26" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_25" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_24" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_23" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_22" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_21" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_20" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_19" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_18" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_17" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_16" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_15" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_14" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_13" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_12" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_11" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_10" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_9" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_8" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_7" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_6" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_5" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_4" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_3" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_2" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_1" BEL
+        "psddivide_top_1/psddivide_1/quotient_r_0" BEL
+        "psddivide_top_1/psddivide_1/rest_r_31" BEL
+        "psddivide_top_1/psddivide_1/rest_r_30" BEL
+        "psddivide_top_1/psddivide_1/rest_r_29" BEL
+        "psddivide_top_1/psddivide_1/rest_r_28" BEL
+        "psddivide_top_1/psddivide_1/rest_r_27" BEL
+        "psddivide_top_1/psddivide_1/rest_r_26" BEL
+        "psddivide_top_1/psddivide_1/rest_r_25" BEL
+        "psddivide_top_1/psddivide_1/rest_r_24" BEL
+        "psddivide_top_1/psddivide_1/rest_r_23" BEL
+        "psddivide_top_1/psddivide_1/rest_r_22" BEL
+        "psddivide_top_1/psddivide_1/rest_r_21" BEL
+        "psddivide_top_1/psddivide_1/rest_r_20" BEL
+        "psddivide_top_1/psddivide_1/rest_r_19" BEL
+        "psddivide_top_1/psddivide_1/rest_r_18" BEL
+        "psddivide_top_1/psddivide_1/rest_r_17" BEL
+        "psddivide_top_1/psddivide_1/rest_r_16" BEL
+        "psddivide_top_1/psddivide_1/rest_r_15" BEL
+        "psddivide_top_1/psddivide_1/rest_r_14" BEL
+        "psddivide_top_1/psddivide_1/rest_r_13" BEL
+        "psddivide_top_1/psddivide_1/rest_r_12" BEL
+        "psddivide_top_1/psddivide_1/rest_r_11" BEL
+        "psddivide_top_1/psddivide_1/rest_r_10" BEL
+        "psddivide_top_1/psddivide_1/rest_r_9" BEL
+        "psddivide_top_1/psddivide_1/rest_r_8" BEL
+        "psddivide_top_1/psddivide_1/rest_r_7" BEL
+        "psddivide_top_1/psddivide_1/rest_r_6" BEL
+        "psddivide_top_1/psddivide_1/rest_r_5" BEL
+        "psddivide_top_1/psddivide_1/rest_r_4" BEL
+        "psddivide_top_1/psddivide_1/rest_r_3" BEL
+        "psddivide_top_1/psddivide_1/rest_r_2" BEL
+        "psddivide_top_1/psddivide_1/rest_r_1" BEL
+        "psddivide_top_1/psddivide_1/rest_r_0" BEL
+        "psddivide_top_1/psddivide_1/rdiv_63" BEL
+        "psddivide_top_1/psddivide_1/rdiv_62" BEL
+        "psddivide_top_1/psddivide_1/rdiv_61" BEL
+        "psddivide_top_1/psddivide_1/rdiv_60" BEL
+        "psddivide_top_1/psddivide_1/rdiv_59" BEL
+        "psddivide_top_1/psddivide_1/rdiv_58" BEL
+        "psddivide_top_1/psddivide_1/rdiv_57" BEL
+        "psddivide_top_1/psddivide_1/rdiv_56" BEL
+        "psddivide_top_1/psddivide_1/rdiv_55" BEL
+        "psddivide_top_1/psddivide_1/rdiv_54" BEL
+        "psddivide_top_1/psddivide_1/rdiv_53" BEL
+        "psddivide_top_1/psddivide_1/rdiv_52" BEL
+        "psddivide_top_1/psddivide_1/rdiv_51" BEL
+        "psddivide_top_1/psddivide_1/rdiv_50" BEL
+        "psddivide_top_1/psddivide_1/rdiv_49" BEL
+        "psddivide_top_1/psddivide_1/rdiv_48" BEL
+        "psddivide_top_1/psddivide_1/rdiv_47" BEL
+        "psddivide_top_1/psddivide_1/rdiv_46" BEL
+        "psddivide_top_1/psddivide_1/rdiv_45" BEL
+        "psddivide_top_1/psddivide_1/rdiv_44" BEL
+        "psddivide_top_1/psddivide_1/rdiv_43" BEL
+        "psddivide_top_1/psddivide_1/rdiv_42" BEL
+        "psddivide_top_1/psddivide_1/rdiv_41" BEL
+        "psddivide_top_1/psddivide_1/rdiv_40" BEL
+        "psddivide_top_1/psddivide_1/rdiv_39" BEL
+        "psddivide_top_1/psddivide_1/rdiv_38" BEL
+        "psddivide_top_1/psddivide_1/rdiv_37" BEL
+        "psddivide_top_1/psddivide_1/rdiv_36" BEL
+        "psddivide_top_1/psddivide_1/rdiv_35" BEL
+        "psddivide_top_1/psddivide_1/rdiv_34" BEL
+        "psddivide_top_1/psddivide_1/rdiv_33" BEL
+        "psddivide_top_1/psddivide_1/rdiv_32" BEL
+        "psddivide_top_1/psddivide_1/rdiv_31" BEL
+        "psddivide_top_1/psddivide_1/rdiv_30" BEL
+        "psddivide_top_1/psddivide_1/rdiv_29" BEL
+        "psddivide_top_1/psddivide_1/rdiv_28" BEL
+        "psddivide_top_1/psddivide_1/rdiv_27" BEL
+        "psddivide_top_1/psddivide_1/rdiv_26" BEL
+        "psddivide_top_1/psddivide_1/rdiv_25" BEL
+        "psddivide_top_1/psddivide_1/rdiv_24" BEL
+        "psddivide_top_1/psddivide_1/rdiv_23" BEL
+        "psddivide_top_1/psddivide_1/rdiv_22" BEL
+        "psddivide_top_1/psddivide_1/rdiv_21" BEL
+        "psddivide_top_1/psddivide_1/rdiv_20" BEL
+        "psddivide_top_1/psddivide_1/rdiv_19" BEL
+        "psddivide_top_1/psddivide_1/rdiv_18" BEL
+        "psddivide_top_1/psddivide_1/rdiv_17" BEL
+        "psddivide_top_1/psddivide_1/rdiv_16" BEL
+        "psddivide_top_1/psddivide_1/rdiv_15" BEL
+        "psddivide_top_1/psddivide_1/rdiv_14" BEL
+        "psddivide_top_1/psddivide_1/rdiv_13" BEL
+        "psddivide_top_1/psddivide_1/rdiv_12" BEL
+        "psddivide_top_1/psddivide_1/rdiv_11" BEL
+        "psddivide_top_1/psddivide_1/rdiv_10" BEL
+        "psddivide_top_1/psddivide_1/rdiv_9" BEL
+        "psddivide_top_1/psddivide_1/rdiv_8" BEL
+        "psddivide_top_1/psddivide_1/rdiv_7" BEL
+        "psddivide_top_1/psddivide_1/rdiv_6" BEL
+        "psddivide_top_1/psddivide_1/rdiv_5" BEL
+        "psddivide_top_1/psddivide_1/rdiv_4" BEL
+        "psddivide_top_1/psddivide_1/rdiv_3" BEL
+        "psddivide_top_1/psddivide_1/rdiv_2" BEL
+        "psddivide_top_1/psddivide_1/rdiv_1" BEL
+        "psddivide_top_1/psddivide_1/rdiv_0" BEL
+        "psddivide_top_1/psddivde_ctrl_1/counter_5" BEL
+        "psddivide_top_1/psddivde_ctrl_1/counter_4" BEL
+        "psddivide_top_1/psddivde_ctrl_1/counter_3" BEL
+        "psddivide_top_1/psddivde_ctrl_1/counter_2" BEL
+        "psddivide_top_1/psddivde_ctrl_1/counter_1" BEL
+        "psddivide_top_1/psddivde_ctrl_1/counter_0" BEL "uart_1/baudtxcount_8"
+        BEL "uart_1/baudtxcount_5" BEL "uart_1/baudtxcount_7" BEL
+        "uart_1/baudtxcount_4" BEL "uart_1/baudtxcount_0" BEL
+        "uart_1/baudrxcount_7" BEL "uart_1/baudrxcount_8" BEL
+        "uart_1/baudrxcount_4" BEL "uart_1/baudrxcount_5" BEL
+        "uart_1/baudrxcount_0" BEL "uart_1/tx" BEL "uart_1/starttxbit" BEL
+        "psddivide_top_1/psddivde_ctrl_1/state" BEL "uart_1/staterxbc" BEL
+        "uart_1/statetxbc" BEL "reset_d" BEL "uart_1/rxready" BEL
+        "uart_1/statetx" BEL "uart_1/staterx" BEL "reset_1" BEL
+        "ioports_1/state_FSM_FFd2_1" BEL "ioports_1/state_FSM_FFd4_1" BEL
+        "ioports_1/state_FSM_FFd5_1" BEL "ioports_1/state_FSM_FFd3_1" BEL
+        "ioports_1/state_FSM_FFd1_1" BEL "ioports_1/state_FSM_FFd2_2" BEL
+        "ioports_1/state_FSM_FFd4_2" BEL "ioports_1/state_FSM_FFd5_2" BEL
+        "reset_2" BEL "clockext100MHz_BUFGP/BUFG";
+TS_clock_100_MHz = PERIOD TIMEGRP "clock100M" 10 ns HIGH 50%;
+SCHEMATIC END;
+

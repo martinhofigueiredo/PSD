@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" Line 11: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">uart_sim</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/impl/psddiv/psddiv/../../../src/verilog-tb/uart_sim.v" Line 11: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">uart_sim</arg>&gt;.
+</msg>
+
+</messages>
+

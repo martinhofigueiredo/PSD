@@ -1,0 +1,6 @@
+verilog work "../../../src/verilog-rtl/psddivide_ctrl.v"
+verilog work "../../../src/verilog-rtl/psddivide.v"
+verilog work "../../../src/verilog-rtl/uart.v"
+verilog work "../../../src/verilog-rtl/psddivide_top.v"
+verilog work "../../../src/verilog-rtl/ioports.v"
+verilog work "../../../src/verilog-rtl/s6base_top.v"

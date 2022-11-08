@@ -1,0 +1,28 @@
+Command line:
+   s6base_tb_isim_translate.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50149
+
+Mon Nov 07 16:39:05 2022
+
+
+ Elaboration Time: 0.53125 sec
+
+ Current Memory Usage: 5584.35 Meg
+
+ Total Signals          : 29232
+ Total Nets             : 18767
+ Total Signal Drivers   : 19132
+ Total Blocks           : 2358
+ Total Primitive Blocks : 1255
+ Total Processes        : 26558
+ Total Traceable Variables  : 7122
+ Total Scalar Nets and Variables : 150171
+
+ Total Simulation Time: 170.422 sec
+
+ Current Memory Usage: 4955.21 Meg
+
+Mon Nov 07 16:42:02 2022
+

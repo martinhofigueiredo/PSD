@@ -1,0 +1,58 @@
+C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/psddivide_ctrl.v {1 {vlog -work work -vopt -stats=none {C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-rtl\psddivide_ctrl.v}
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module psddivide_ctrl
+
+Top level modules:
+	psddivide_ctrl
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-tb/uart_sim.v {1 {vlog -work work -vopt -stats=none {C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-tb\uart_sim.v}
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module uart_sim
+
+Top level modules:
+	uart_sim
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/uart.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/uart.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module uart
+
+Top level modules:
+	uart
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/psddivide.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/psddivide.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module psddivide
+
+Top level modules:
+	psddivide
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/ioports.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/ioports.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module ioports
+
+Top level modules:
+	ioports
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-tb/s6base_tb.v {1 {vlog -work work -vopt -stats=none {C:\usr\jca\FEUP\FEUP\Aulas\2022-2023\ProjetoSistemasDigitais\AulasPL\Lab2\PSD2122-LAB2\src\verilog-tb\s6base_tb.v}
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module s6base_tb
+
+Top level modules:
+	s6base_tb
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/s6base_top.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/s6base_top.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module s6base_top
+
+Top level modules:
+	s6base_top
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/psddivide_top.v {2 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/psddivide_top.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+** Warning: C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab2/PSD2122-LAB2/src/verilog-rtl/psddivide_top.v(14): (vlog-2283) Extra semicolon in $unit (global) scope.
+-- Compiling module psddivide_top
+
+Top level modules:
+	psddivide_top
+
+} {} {}}
