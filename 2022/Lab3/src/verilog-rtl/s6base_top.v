@@ -91,7 +91,7 @@ wire [31:0] P0out, P1out, P2out, P3out,
 wire [31:0] P0in,  P1in,  P2in,  P3in,
             P4in,  P5in,  P6in,  P7in;  // input ports (32 bits)
 
-
+parameter NBITS = 32;
 // Synchronize the external reset:
 always @(posedge clockext100MHz)
 begin
@@ -165,7 +165,7 @@ wire run, busy;
 wire [31:0] dividend, divisor, quotient, rest;
 
 	 
-psddivide_top  psddivide_top_1(
+psddivide_top #(.NBITS(NBITS)) psddivide_top_1 (
        .clock( clockext100MHz ),  //master clock
 	   .reset( reset ),           //synch reset, active high
 	   .run( run ),               //start a new sqrt

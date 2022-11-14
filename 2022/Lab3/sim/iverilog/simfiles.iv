@@ -1,0 +1,9 @@
+src/verilog-rtl/psddivide_ctrl.v
+src/verilog-rtl/psddivide_top.v
+src/verilog-rtl/psddivide.v
+src/verilog-rtl/s6base_top.v
+src/verilog-rtl/uart.v
+src/verilog-rtl/ioports.v
+src/verilog-tb/uart_sim.v
+src/verilog-tb/s6base_tb.v
+src/verilog-rtl/psddivide_ctrl.v
