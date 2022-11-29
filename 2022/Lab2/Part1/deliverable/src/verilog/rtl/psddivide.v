@@ -52,7 +52,7 @@ always @(posedge clock ) begin //syncronous only with the clock
 		rdivisor <= start ? divisor[NBITS-1:0] : rdivisor; //when is start is 1 it loads a new divisor else divisor stays the same
 		rdiv[NBITS-2:0] <= loadright[NBITS-2:0]; // loads the right half of the rdiv register
 		rdiv[2*NBITS-1:NBITS-1] <= loadleft[NBITS:0]; // loads the right half of the rdiv register
-		rest <= stop ? rdiv[2*NBITS-1:NBITS-1] : rest; // if stop is 1 loads the output rest register with the anwser else stays the same  
+		rest <= stop ? rdiv[2*NBITS-1:NBITS] : rest; // if stop is 1 loads the output rest register with the anwser else stays the same  
 		quotient <= stop ? rdiv[NBITS-1:0] : quotient; // if stop is 1 loads the output quotient register with the anwser else stays the same
 	end
 end
