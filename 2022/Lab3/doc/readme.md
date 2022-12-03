@@ -6,10 +6,10 @@
 
 This project will build a custom digital circuit for implementing a bank of eight different finite response digital filters for processing an ultrasonic signal sampled at 1953.1 kHz (250 MHz/128), with 16 bits per sample. Each digital FIR filter can have up to 128 coefficients represented by 24 fixed-point signed numbers, with 6 integer bits and 18 fractional bits. 
 
-The filter coefficients hk are read from a bank of 8 independent RAM memories. Each memory is organized as
+The filter coefficients $h_k$ are read from a bank of 8 independent RAM memories. Each memory is organized as
 32 words of 48 bits (two coefficients per memory location) and is read by a clocked synchronous interface, as described below. The memories will be implemented as dual-port memory blocks, using one write port to upload the memories with the filter coefficients (this part is not included in your project).
 
-For each input sample, the system must compute the outputs of the 8 digital filters, producing 8 digital signals with the same sampling frequency as the input signal. The output is produced by calculating the discrete convolution between the input signal (represented by samples $x_{j}$) and the filter impulse response $h_{k}$ (the filter coefficients):
+For each input sample, the system must compute the outputs of the 8 digital filters, producing 8 digital signals with the same sampling frequency as the input signal. The output is produced by calculating the discrete convolution between the input signal (represented by samples $x_j$) and the filter impulse response $h_k$ (the filter coefficients):
 
 $$y_{n} = \sum_{k=0}^{N-1} h_{k} \cdot x_{n-k}$$
 
