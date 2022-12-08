@@ -1,0 +1,22 @@
+C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/filterbank.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/filterbank.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module profir
+
+Top level modules:
+	profir
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-tb/profir_tb.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-tb/profir_tb.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module profir_tb
+
+Top level modules:
+	profir_tb
+
+} {} {}} C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/memory8bank.v {1 {vlog -work work -vopt -stats=none C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/memory8bank.v
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+-- Compiling module memory8bank
+
+Top level modules:
+	memory8bank
+
+} {} {}}

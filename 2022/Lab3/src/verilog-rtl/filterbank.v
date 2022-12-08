@@ -35,8 +35,19 @@ module profir(
 	output signed [15:0]  dataout7	// Output data of filter 7
 );
 
+// Example of generator of the addresses to read the coefficients memories:
+// 
+reg [5:0] countaddress = 0;
+
+always @(posedge clock)
+if ( din_enable )
+  countaddress <= 0;
+else
+  countaddress = countaddress + 1;
+
 // Assign all output to zeros
-assign coeffaddress = 6'd0;
+assign coeffaddress = countaddress;
+
 assign dataout0 = 16'd0;
 assign dataout1 = 16'd0;
 assign dataout2 = 16'd0;

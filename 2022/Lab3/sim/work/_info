@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/sim
+T_opt
+!s110 1670238398
+VH2KRASN[cf:]_T=DeVNJ_2
+Z1 04 9 4 work profir_tb fast 0
+=1-b05cdae825a3-638dd0bd-3be-4e98
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;10.6a;65
+R0
+T_opt1
+!s110 1670368361
+Vg_RTUI^in3Vjmd]i1iOj<0
+R1
+=3-b05cdae825a3-638fcc68-1be-2068
+o-quiet -auto_acc_if_foreign -work work +acc
+R2
+n@_opt1
+R3
+vmemory8bank
+Z4 !s110 1670368335
+!i10b 1
+!s100 `@d9Qia9XoEeHE9Z[3Ja<3
+IMBl;C@H>Pg<?mf8E@boXz1
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1669982469
+8C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/memory8bank.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/memory8bank.v
+L0 13
+Z6 OL;L;10.6a;65
+r1
+!s85 0
+31
+Z7 !s108 1670368335.000000
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/memory8bank.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/memory8bank.v|
+!i113 0
+Z8 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vprofir
+R4
+!i10b 1
+!s100 U]bY6bC7IG9B2WZP;EI;>2
+IkMhhWViZC?`R[kO^aEP^C0
+R5
+R0
+w1670355125
+8C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/filterbank.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/filterbank.v
+Z9 L0 14
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/filterbank.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-rtl/filterbank.v|
+!i113 0
+R8
+R2
+vprofir_tb
+R4
+!i10b 1
+!s100 0:Nbkf93oIV_`UaN0a=QI1
+IVWC>CMNP?<WEY[GMPKR402
+R5
+R0
+w1670368304
+8C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-tb/profir_tb.v
+FC:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-tb/profir_tb.v
+R9
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-tb/profir_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/usr/jca/FEUP/FEUP/Aulas/2022-2023/ProjetoSistemasDigitais/AulasPL/Lab3/src/verilog-tb/profir_tb.v|
+!i113 0
+R8
+R2
