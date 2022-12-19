@@ -16,8 +16,8 @@ module profir_tb;
 parameter MAXSAMPLES            = 1_000_000,
           CLOCK_FREQUENCY       = 250_000_000,
           CLOCK_PERIOD          = 4,
-          INPUT_DATAFILE        = "../simdata/datain.hex", // input data
-		  OUTPUT_GOLDEN_DATAFILE= "../simdata/dataout.hex";// expected output data
+          INPUT_DATAFILE        = "simdata/datain.hex", // input data
+		  OUTPUT_GOLDEN_DATAFILE    = "simdata/dataout.hex";// expected output data
 
 reg clock, reset;
 reg [15:0] datain;  // Input data to the for bank
@@ -99,6 +99,14 @@ begin
   end
 end
 
+
+initial
+begin
+  $dumpfile("sim/iverilog/profir.vcd");
+  $dumpvars(0, filter_bank_1);
+end			
+
+
 assign #1 datain_en = (counter == 127);
 
 
@@ -126,7 +134,7 @@ begin
   begin
     repeat(1000)			// wait more 1000 clocks and stop simulation
 	  @(posedge clock);
-	$stop;
+  $finish;
   end
   else
     Csamples <= Csamples + 1;
@@ -142,7 +150,7 @@ end
 //--------------------------------------------------------------------------------
 // Instantiate the memory bank:
 memory8bank  memory8bank_1(
-              .clock( clock ),		// Master clock, active in the posedge
+        .clock( clock ),		// Master clock, active in the posedge
 			  .reset( reset ),		// Master reset, synch active high (clears output regs)
 			  //-------------------------------------
 			  // write port, to connect to the serial interface

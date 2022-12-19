@@ -43,14 +43,14 @@ reg [35:0] RAM6[0:63];
 reg [35:0] RAM7[0:63];		
 
 // Filenames of data files to pre-load the memories:
-parameter COEFF_FILENAME_0 = "../simdata/coefficients0.hex";
-parameter COEFF_FILENAME_1 = "../simdata/coefficients1.hex";
-parameter COEFF_FILENAME_2 = "../simdata/coefficients2.hex";
-parameter COEFF_FILENAME_3 = "../simdata/coefficients3.hex";
-parameter COEFF_FILENAME_4 = "../simdata/coefficients4.hex";
-parameter COEFF_FILENAME_5 = "../simdata/coefficients5.hex";
-parameter COEFF_FILENAME_6 = "../simdata/coefficients6.hex";
-parameter COEFF_FILENAME_7 = "../simdata/coefficients7.hex";
+parameter COEFF_FILENAME_0 = "simdata/coefficients0.hex";
+parameter COEFF_FILENAME_1 = "simdata/coefficients1.hex";
+parameter COEFF_FILENAME_2 = "simdata/coefficients2.hex";
+parameter COEFF_FILENAME_3 = "simdata/coefficients3.hex";
+parameter COEFF_FILENAME_4 = "simdata/coefficients4.hex";
+parameter COEFF_FILENAME_5 = "simdata/coefficients5.hex";
+parameter COEFF_FILENAME_6 = "simdata/coefficients6.hex";
+parameter COEFF_FILENAME_7 = "simdata/coefficients7.hex";
 
 // Pre-load the memories with constant data read from datafiles:
 initial

@@ -11,6 +11,7 @@ jca@fe.up.pt, Nov 2022
 */
 `timescale 1ns/1ps
 
+
 module profir(
 	input 			clock,		// Master 250 MHz clock, active in the rising edge
 	input 			reset,		// Master reset, synchronous, active high
@@ -35,26 +36,6 @@ module profir(
 	output signed [15:0]  dataout7	// Output data of filter 7
 );
 
-// Example of generator of the addresses to read the coefficients memories:
-// 
-reg [5:0] countaddress = 0;
 
-always @(posedge clock)
-if ( din_enable )
-  countaddress <= 0;
-else
-  countaddress = countaddress + 1;
-
-// Assign all output to zeros
-assign coeffaddress = countaddress;
-
-assign dataout0 = 16'd0;
-assign dataout1 = 16'd0;
-assign dataout2 = 16'd0;
-assign dataout3 = 16'd0;
-assign dataout4 = 16'd0;
-assign dataout5 = 16'd0;
-assign dataout6 = 16'd0;
-assign dataout7 = 16'd0;
 
 endmodule
