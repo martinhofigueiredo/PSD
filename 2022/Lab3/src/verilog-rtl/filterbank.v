@@ -37,5 +37,15 @@ module profir(
 );
 
 
+filter filter_1(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff0),
+	.coeffaddress(coeffaddress),
+	.dataout(dataout0) 
+);
+
 
 endmodule
