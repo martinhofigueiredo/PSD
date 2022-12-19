@@ -103,7 +103,7 @@ end
 initial
 begin
   $dumpfile("sim/iverilog/profir.vcd");
-  $dumpvars(0, filter_bank_1);
+  $dumpvars(0, profir_tb);
 end			
 
 
