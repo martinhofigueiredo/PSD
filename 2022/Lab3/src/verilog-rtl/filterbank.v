@@ -8,7 +8,12 @@ jca@fe.up.pt, Nov 2022
 	(Projeto de Sistemas Digitais) of the Master in Electrical 
 	and Computer Engineering requires explicit authorization from the author.
  
+ We implemented one filter that we instanciate 7 time to make the filter bank
+ -Martinho Figueiredo Pedro Cruz
+
 */
+
+
 `timescale 1ns/1ps
 
 
@@ -35,9 +40,7 @@ module profir(
 	output signed [15:0]  dataout6,	// Output data of filter 6
 	output signed [15:0]  dataout7	// Output data of filter 7
 );
-
-
-filter filter_1(
+filter filter_0(
 	.clock(clock),
 	.reset(reset),
 	.din_enable(din_enable),
@@ -47,5 +50,66 @@ filter filter_1(
 	.dataout(dataout0) 
 );
 
+filter filter_1(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff1),
+	.dataout(dataout1) 
+);
 
+filter filter_2(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff2),
+	.dataout(dataout2) 
+);
+
+filter filter_3(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff3),
+	.dataout(dataout3) 
+);
+
+filter filter_4(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff4),
+	.dataout(dataout4) 
+);
+
+filter filter_5(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff5),
+	.dataout(dataout5) 
+);
+
+filter filter_6(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff6),
+	.dataout(dataout6) 
+);
+
+filter filter_7(
+	.clock(clock),
+	.reset(reset),
+	.din_enable(din_enable),
+	.datain(datain),
+	.coeff(coeff7),
+	.dataout(dataout7) 
+);
 endmodule
