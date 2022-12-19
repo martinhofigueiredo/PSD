@@ -47,8 +47,8 @@ coeffsf = double(coeffss) / 2^Nfracbits;
 
 
 %% Convolution
-Yout = conv( datains, coeffsf, 'same' );
-Youti = int32( Yout );
+Yout = conv( datains, coeffsf );
+Youti = int32( floor(Yout(1:length(datains)) ) );
 
 %% Generate the output hex file:
 fp = fopen(outputgoldenfile,'w+');
@@ -81,8 +81,8 @@ grid on;
 
 
 subplot(6,1,3);
-freq = 1:length(Yout);
-freq = freq/length(Yout) * Fs / 1000;
+freq = 1:length(datains);
+freq = freq/length(datains) * Fs / 1000;
 plot( freq, abs( fft( int32(datains) ) ) );
 title('FFT of input signal');
 xlabel( 'Frequency (kHz)');
@@ -107,7 +107,7 @@ xlabel('Frequency (kHz)');
 title('Frequency response (abs gain)');
 
 subplot(6,1,6);
-plot( freq, abs( fft( int32(Yout) ) ) );
+plot( freq, abs( fft( Youti ) ) );
 title('FFT of output signal');
 xlabel( 'Frequency (kHz)');
 ylabel('Amplitude');

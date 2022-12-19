@@ -1,0 +1,3 @@
+NET "clock" TNM_NET = "mainclock";
+TIMESPEC "TS_mainclock" = PERIOD "mainclock" 4 ns HIGH 50 %;
+

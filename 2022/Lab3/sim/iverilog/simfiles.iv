@@ -1,0 +1,3 @@
+src/verilog-rtl/filterbank.v
+src/verilog-rtl/memory8bank.v
+src/verilog-tb/profir_tb.v
