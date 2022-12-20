@@ -8,8 +8,17 @@ jca@fe.up.pt, Nov 2022
 	(Projeto de Sistemas Digitais) of the Master in Electrical 
 	and Computer Engineering requires explicit authorization from the author.
  
- We implemented one filter that we instanciate 7 time to make the filter bank
+ Implementamos um modulo filter que instanciamos o mesmo bloco 8 vezes neste modulo
+ apenas o primeiro gera os coeficientes pois todos os outros tem a mesma ligação por isso produziriam o mesmo resultado
  -Martinho Figueiredo Pedro Cruz
+
+
+
+
+
+
+
+
 
 */
 

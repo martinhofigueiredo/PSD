@@ -33,14 +33,13 @@ module filter(
 
 parameter NWINDOW = 128;
 
-parameter RSET = 0;
-parameter INIT = 1;
-parameter READ = 2;
-parameter WORK = 3;
-parameter DONE = 4;
+parameter INIT = 0;
+parameter READ = 1;
+parameter WORK = 2;
+parameter DONE = 3;
 
 reg signed [15:0] x [NWINDOW-1:0]; //Array 128 elementos de 16 bits
-reg [2:0] state = INIT;
+reg [1:0] state = INIT;
 
 reg [6:0] address = 0; //Register to store the address for the coeff
 assign coeffaddress = address[5:0];
@@ -64,18 +63,6 @@ always @(posedge clock) begin
     odd_sample<=odd_network; //Loard new sample
     even_sample<=even_network; //
     case ( state )
-        RSET: begin //WIPE EVERYTHING
-            dataout <= 0; // Initialize the output register at zero
-            accum = 42'd0;
-            for( i = 0; i < NWINDOW; i = i + 1)
-                x[i] <= 16'd0; // Initialize the X sample vector with zeros
-            product[1] <= 34'd0;
-            product[0] <= 34'd0;
-            address = 0;
-            odd_sample = 16'd0;
-            even_sample <= 16'd0;
-            state = INIT;
-        end
         INIT: begin
             dataout <= 0; // Initialize the output register at zero
             accum = 42'd0;
@@ -104,8 +91,8 @@ always @(posedge clock) begin
 
             product[0] <= even_sample * $signed(coeff[17:0]);
             product[1] <= odd_sample * $signed(coeff[35:18]);
-            $display("product 0 = %h", product[0]);
-            $display("product 1 = %h", product[1]);
+            //$display("product 0 = %h", product[0]);
+            //$display("product 1 = %h", product[1]);
             address = address + 1;
         end
 
@@ -117,7 +104,7 @@ always @(posedge clock) begin
 end
 
 always @(negedge clock) begin //Evaluate Transition in the negative edge of the clock
-    if( reset ) state = RSET;
+    if( reset ) state = INIT;
     case ( state )
         INIT: begin
             state = din_enable ? READ : INIT;
