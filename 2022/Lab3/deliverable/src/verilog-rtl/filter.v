@@ -53,7 +53,7 @@ reg signed [15:0] even_sample;
 
 wire signed [15:0] odd_network;
 assign odd_network = x[(address << 1)+1]; 
-reg signed [15:0] odd_sample;
+reg signed [15:0] odd_sample;  // at each cycle we load the sample with the correnspondent value from the x input vector
 
 
 integer i;// Used in for loop
@@ -69,7 +69,7 @@ always @(posedge clock) begin
             for( i = 0; i < NWINDOW; i = i + 1)
                 x[i] <= 16'd0; // Initialize the X sample vector with zeros
             product[1] <= 34'd0;
-            product[0] <= 34'd0;
+            product[0] <= 34'd0;// everything to zero
             address = 0;
         end
         READ: begin
@@ -79,7 +79,7 @@ always @(posedge clock) begin
                 x[0] <= datain; // load data in
             end
             else if(address == 2) begin
-                product[0] <= even_sample * $signed(coeff[17:0]); 
+                product[0] <= even_sample * $signed(coeff[17:0]); //1st multiplication to appear before we go to the loop and first for the accumulator
                 product[1] <= odd_sample * $signed(coeff[35:18]);
             end
             address = address + 1;
@@ -89,7 +89,7 @@ always @(posedge clock) begin
         WORK: begin
             accum = accum + product[0] + product[1];
 
-            product[0] <= even_sample * $signed(coeff[17:0]);
+            product[0] <= even_sample * $signed(coeff[17:0]);//multiplication to be summed next time we come arount to this code bit
             product[1] <= odd_sample * $signed(coeff[35:18]);
             //$display("product 0 = %h", product[0]);
             //$display("product 1 = %h", product[1]);
@@ -107,16 +107,16 @@ always @(negedge clock) begin //Evaluate Transition in the negative edge of the 
     if( reset ) state = INIT;
     case ( state )
         INIT: begin
-            state = din_enable ? READ : INIT;
+            state = din_enable ? READ : INIT; ////if new data in then we restart from the read stage
         end
         READ: begin
-            state = ( address <= 2 ) ? WORK : READ;
+            state = ( address <= 2 ) ? WORK : READ; // Wait for the first 2 cycles to load the input and coeef
         end
         WORK: begin
-            state = ( address > NWINDOW/2 ) ? DONE : WORK; 
-        end
+            state = ( address > NWINDOW/2 ) ? DONE : WORK; // while we didnt read al the coeff
+         end
         DONE: begin
-            state = din_enable ? READ : DONE;
+            state = din_enable ? READ : DONE; //if new data in then we restart from the read stage
         end
     endcase
 end
